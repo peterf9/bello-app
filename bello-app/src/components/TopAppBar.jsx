@@ -24,6 +24,7 @@ export default function TopAppBar({ rootState, updateRootState, onCreatePet }) {
     const defaultName = prompt(t("newPetName") || "Nome do Novo Cão");
     if (defaultName && defaultName.trim().length > 0) {
       onCreatePet(defaultName.trim());
+      navigate("/profile", { state: { openEdit: true } });
     }
     setIsDropdownOpen(false);
   };

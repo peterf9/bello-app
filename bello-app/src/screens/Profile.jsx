@@ -1,5 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Cropper from "react-easy-crop";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getCroppedImgBase64 } from "../utils/cropImage";
 import breedData from "../utils/breeds.json";
@@ -8,9 +9,18 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
   const { t, i18n } = useTranslation();
   const petInfo = appState?.petInfo || {};
   const schedule = appState?.schedule || {};
+  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditInfoOpen, setIsEditInfoOpen] = useState(false);
+  const [isEditInfoOpen, setIsEditInfoOpen] = useState(location.state?.openEdit || false);
   const [calcResult, setCalcResult] = useState(null);
+
+  useEffect(() => {
+    if (location.state?.openEdit) {
+      setIsEditInfoOpen(true);
+      // Clear state so it doesn't reopen on every navigation back
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
   
   // NFC State
   const [isScanningNfc, setIsScanningNfc] = useState(false);
@@ -34,7 +44,8 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
     foodDailyBase: petInfo.foodDailyBase || "300",
     adultWeight: petInfo.adultWeight || "30",
     gender: petInfo.gender || "male",
-    manualGrid: petInfo.manualGrid || []
+    manualGrid: petInfo.manualGrid || [],
+    firstMealPercentage: petInfo.firstMealPercentage || 50
   });
 
   const handleFormChange = (field, value) => {
@@ -127,13 +138,16 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
 
   const calculateAgeStr = (dateString) => {
     const age = getExactAge(dateString);
-    if (age.months <= 0) return "0 meses";
+    if (!dateString) return "Desconhecido";
+    if (age.months <= 0) return "Recém-nascido";
     if (age.months < 12) return `${age.months} meses`;
     
     const years = Math.floor(age.months / 12);
     const remainingMonths = age.months % 12;
     return remainingMonths === 0 ? `${years} anos` : `${years} anos e ${remainingMonths} meses`;
   };
+
+  const isAdult = getExactAge(petInfo.birthDate).months >= 12;
 
   const handleCalculateMath = () => {
     const freq = parseInt(schedule?.frequency || 3, 10);
@@ -171,13 +185,30 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
         }
     }
 
-    const portion = Math.round(base / freq);
+    let meal1Grams = 0;
+    let meal2Grams = 0;
+    let actualFreq = freq;
+
+    if (isAdult) {
+        actualFreq = 2; // Always 2 for adult in this specific logic
+        const p1 = parseInt(profileForm.firstMealPercentage || 50, 10);
+        meal1Grams = Math.round(base * (p1 / 100));
+        meal2Grams = Math.round(base - meal1Grams);
+        calcDetails = `Adulto: Divisão de ${p1}% (${meal1Grams}g) e ${100-p1}% (${meal2Grams}g).`;
+    } else {
+        meal1Grams = Math.round(base / freq);
+        meal2Grams = meal1Grams;
+    }
+
+    const portion = meal1Grams;
     
     setCalcResult({
       total: base,
       portion: portion,
+      meal1: meal1Grams,
+      meal2: meal2Grams,
       calcDetails: calcDetails,
-      frequency: freq,
+      frequency: actualFreq,
       foodName: petInfo.foodName || profileForm.foodName || "Ração Genérica"
     });
   };
@@ -216,14 +247,38 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
 
   const saveSettings = () => {
     if (updateState && calcResult && !calcResult.error) {
-      updateState(prev => ({
-        ...prev,
-        schedule: {
-          ...prev.schedule,
-          gramsPerMeal: calcResult.portion,
-          totalGrams: calcResult.total
+      updateState(prev => {
+        let newMeals = [...(prev.schedule.meals || [])];
+        if (isAdult) {
+          // If adult, ensure we have at least 2 meals and set their grams
+          // If there are more than 2, the rest might be snacks or empty
+          if (newMeals.length < 2) {
+             newMeals = [
+               { id: 'm1', time: '08:00', name: 'Breakfast' },
+               { id: 'm2', time: '18:00', name: 'Dinner' }
+             ];
+          }
+          newMeals = newMeals.map((m, idx) => {
+            if (idx === 0) return { ...m, grams: calcResult.meal1 };
+            if (idx === 1) return { ...m, grams: calcResult.meal2 };
+            return { ...m, grams: 0 }; // Extra meals are zeroed out or snacks
+          });
+        } else {
+          // Puppy: equal distribution or whatever interpolation says
+          newMeals = newMeals.map(m => ({ ...m, grams: calcResult.portion }));
         }
-      }));
+
+        return {
+          ...prev,
+          schedule: {
+            ...prev.schedule,
+            gramsPerMeal: calcResult.portion, // Fallback for general display
+            totalGrams: calcResult.total,
+            frequency: calcResult.frequency,
+            meals: newMeals
+          }
+        };
+      });
     }
     setIsModalOpen(false);
   };
@@ -244,7 +299,8 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
           foodDailyBase: parseInt(profileForm.foodDailyBase, 10),
           adultWeight: parseFloat(profileForm.adultWeight),
           gender: profileForm.gender,
-          manualGrid: profileForm.manualGrid
+          manualGrid: profileForm.manualGrid,
+          firstMealPercentage: parseInt(profileForm.firstMealPercentage, 10)
         }
       }));
     }
@@ -266,7 +322,12 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
             <div className="backdrop-blur-xl bg-surface/60 p-6 rounded-lg shadow-sm">
               <div className="flex justify-between items-end">
                 <div>
-                  <span className="font-label text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-1 block">{petInfo.breed || "Giant Puppy"}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-label text-xs font-semibold uppercase tracking-widest text-on-surface-variant mb-1 block">{petInfo.breed || "Giant Puppy"}</span>
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter ${isAdult ? 'bg-orange-100 text-orange-700' : 'bg-blue-100 text-blue-700'}`}>
+                      {isAdult ? 'Adulto' : 'Filhote'}
+                    </span>
+                  </div>
                   <h2 className="font-headline text-4xl font-extrabold text-primary tracking-tight">{petInfo.name}</h2>
                 </div>
                 <div className="flex gap-2">
@@ -387,9 +448,28 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
               </div>
 
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">Meta Diária Fixa (Opcional)</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">Meta Diária Fixa</span>
                 <input type="number" value={profileForm.foodDailyBase} onChange={e=>setProfileForm({...profileForm, foodDailyBase: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
               </div>
+
+              {isAdult && (
+                <div className="bg-orange-50 dark:bg-orange-950/20 p-4 rounded-xl border border-orange-200 dark:border-orange-900/50">
+                  <span className="text-xs font-bold text-orange-800 dark:text-orange-300 uppercase tracking-wider mb-1 block">% Primeira Refeição (Adulto)</span>
+                  <div className="flex items-center gap-3">
+                    <input 
+                      type="range" 
+                      min="10" 
+                      max="90" 
+                      step="5" 
+                      value={profileForm.firstMealPercentage} 
+                      onChange={e=>setProfileForm({...profileForm, firstMealPercentage: e.target.value})} 
+                      className="flex-1 accent-orange-600" 
+                    />
+                    <span className="font-bold text-orange-700 dark:text-orange-400 w-12 text-right">{profileForm.firstMealPercentage}%</span>
+                  </div>
+                  <p className="text-[10px] text-orange-600/70 mt-2 font-medium">A segunda refeição será automaticamente {100 - profileForm.firstMealPercentage}%.</p>
+                </div>
+              )}
 
 
               <div className="grid grid-cols-2 gap-4">

@@ -67,7 +67,7 @@ export default function Dashboard({ appState, updateState }) {
           <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-1">
             {todayLogs.length === schedule.meals?.length ? t("allDone") : `${t("nextMealAt")} ${nextMeal?.time || '--:--'}`}
           </h2>
-          <p className="text-sm opacity-90">{todayLogs.length === schedule.meals?.length ? t("restWell") : `${schedule.gramsPerMeal || '---'}g ${t("perMeal").toLowerCase()}`}</p>
+          <p className="text-sm opacity-90">{todayLogs.length === schedule.meals?.length ? t("restWell") : `${nextMeal?.grams || schedule.gramsPerMeal || '---'}g ${t("perMeal").toLowerCase()}`}</p>
         </div>
         <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute right-6 top-6">
@@ -103,7 +103,10 @@ export default function Dashboard({ appState, updateState }) {
                      {meal.time}
                      {completedAt && <span className="text-secondary ml-2 normal-case font-medium">✓ {completedAt}</span>}
                    </span>
-                   <span className="font-headline text-xl font-bold text-on-surface">{t(meal.name.replace(/\s+/g, '')) !== meal.name.replace(/\s+/g, '') ? t(meal.name.replace(/\s+/g, '')) : t(meal.name)}</span>
+                   <span className="font-headline text-xl font-bold text-on-surface">
+                     {t(meal.name.replace(/\s+/g, '')) !== meal.name.replace(/\s+/g, '') ? t(meal.name.replace(/\s+/g, '')) : t(meal.name)}
+                     {meal.grams > 0 && <span className="text-primary font-medium text-sm ml-2">({meal.grams}g)</span>}
+                   </span>
                 </div>
               </div>
               <div className="flex items-center gap-4">
