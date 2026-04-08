@@ -8,6 +8,20 @@ export const translations = {
     navHistory: "History",
     navProfile: "Profile",
     navSettings: "Settings",
+    navAdventure: "Adventure",
+
+    // Gamification
+    gamificationHero: "Pet Adventure",
+    petLevel: "Level",
+    patacoins: "Patacoins",
+    gardenTitle: "{{name}}'s Garden",
+    dailyGoals: "Daily Goals",
+    walkGoal: "Daily Walk",
+    waterGoal: "Clean Water",
+    feedingGoal: "Feeding",
+    shopTitle: "Garden Shop",
+    buyNow: "Buy for",
+    unlocked: "Unlocked",
 
     // Dashboard
     dailyProgress: "Daily Progress",
@@ -105,6 +119,20 @@ export const translations = {
     navHistory: "Histórico",
     navProfile: "Perfil",
     navSettings: "Ajustes",
+    navAdventure: "Aventura",
+
+    // Gamification
+    gamificationHero: "Aventura Canina",
+    petLevel: "Nível",
+    patacoins: "Patacões",
+    gardenTitle: "Quintal do {{name}}",
+    dailyGoals: "Metas Diárias",
+    walkGoal: "Passeio do Dia",
+    waterGoal: "Água Limpa",
+    feedingGoal: "Alimentação",
+    shopTitle: "Loja do Quintal",
+    buyNow: "Comprar por",
+    unlocked: "Desbloqueado",
 
     // Dashboard
     dailyProgress: "Progresso do Dia",

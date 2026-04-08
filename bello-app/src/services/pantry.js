@@ -72,5 +72,15 @@ export const getDefaultPetState = (name = "Novo Cão") => ({
     ],
     notificationsEnabled: true
   },
+  gamification: {
+    xp: 0,
+    level: 1,
+    patacoins: 100,
+    unlockedItems: [], // IDs of decorative items
+    dailyTasks: {
+      walk: false,
+      water: false
+    }
+  },
   logs: {}
 });

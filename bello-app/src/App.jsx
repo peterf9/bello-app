@@ -7,6 +7,7 @@ import Dashboard from "./screens/Dashboard";
 import History from "./screens/History";
 import Profile from "./screens/Profile";
 import Settings from "./screens/Settings";
+import Gamification from "./screens/Gamification";
 import { fetchAppState, updateAppState, getDefaultPetState } from "./services/pantry";
 
 function App() {
@@ -118,6 +119,7 @@ function App() {
         <Route path="/history" element={<History appState={activePetInfo} />} />
         <Route path="/profile" element={<Profile rootState={rootState} appState={activePetInfo} updateState={handleUpdateActivePetState} onDeletePet={handleDeletePet} />} />
         <Route path="/settings" element={<Settings rootState={rootState} updateRootState={handleUpdateRootSettings} appState={activePetInfo} updateState={handleUpdateActivePetState} />} />
+        <Route path="/gamification" element={<Gamification appState={activePetInfo} updateState={handleUpdateActivePetState} />} />
       </Routes>
       <BottomNav />
     </BrowserRouter>

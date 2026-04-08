@@ -28,6 +28,10 @@ export default function BottomNav() {
         <span className="material-symbols-outlined" style={getIconStyle('/history')}>history</span>
         <span className="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-0.5">{t("navHistory")}</span>
       </Link>
+      <Link to="/gamification" className={getNavClass('/gamification')}>
+        <span className="material-symbols-outlined" style={getIconStyle('/gamification')}>park</span>
+        <span className="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">{t("navAdventure")}</span>
+      </Link>
       <Link to="/profile" className={getNavClass('/profile')}>
         <span className="material-symbols-outlined" style={getIconStyle('/profile')}>pets</span>
         <span className="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">{t("navProfile")}</span>

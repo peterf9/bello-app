@@ -72,6 +72,12 @@ export default function Dashboard({ appState, updateState }) {
           ...prev.logs,
           [today]: newLogsForToday
         },
+        gamification: isCompleting ? {
+          ...prev.gamification,
+          xp: (prev.gamification?.xp || 0) + 30,
+          level: Math.floor(((prev.gamification?.xp || 0) + 30) / 200) + 1,
+          patacoins: (prev.gamification?.patacoins || 0) + 10
+        } : prev.gamification,
         schedule: {
           ...prev.schedule,
           meals: newScheduleMeals
