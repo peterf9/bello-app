@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diet Settings - Bello</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#b7eaff",
+              "surface-container": "#f2ede6",
+              "on-tertiary-fixed": "#463600",
+              "on-secondary-fixed": "#004557",
+              "on-primary-fixed": "#401f00",
+              "secondary-dim": "#005b71",
+              "tertiary-fixed-dim": "#eec540",
+              "on-surface-variant": "#625f58",
+              "on-tertiary-fixed-variant": "#675200",
+              "surface-container-high": "#ede8df",
+              "surface": "#fef9f3",
+              "on-tertiary-container": "#5c4900",
+              "on-surface": "#34322c",
+              "surface-container-highest": "#e7e2d9",
+              "on-secondary": "#f1faff",
+              "surface-bright": "#fef9f3",
+              "secondary-container": "#b7eaff",
+              "inverse-surface": "#0f0e0b",
+              "primary-container": "#ffaf6d",
+              "primary-dim": "#804300",
+              "primary-fixed-dim": "#f89e4f",
+              "surface-variant": "#e7e2d9",
+              "inverse-on-surface": "#a09c97",
+              "on-background": "#34322c",
+              "error-dim": "#821a01",
+              "outline": "#7e7a73",
+              "inverse-primary": "#fca151",
+              "on-tertiary": "#fff8ee",
+              "secondary": "#006880",
+              "tertiary": "#745c00",
+              "on-error": "#fff7f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#914d00",
+              "surface-dim": "#dfd9cf",
+              "secondary-fixed-dim": "#8ce0ff",
+              "surface-container-low": "#f8f3ec",
+              "primary": "#914d00",
+              "error-container": "#fa7150",
+              "tertiary-fixed": "#fdd34d",
+              "on-error-container": "#671200",
+              "primary-fixed": "#ffaf6d",
+              "tertiary-dim": "#665100",
+              "tertiary-container": "#fdd34d",
+              "error": "#aa371c",
+              "outline-variant": "#b6b1a9",
+              "background": "#fef9f3",
+              "on-primary-container": "#5f3000",
+              "on-primary-fixed-variant": "#6c3800",
+              "on-primary": "#fff7f4",
+              "on-secondary-container": "#00596f",
+              "on-secondary-fixed-variant": "#00647c"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fef9f3;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#f2ede6] dark:bg-stone-900 transition-colors">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-xl mx-auto">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-[#f8f3ec]/50 transition-colors rounded-full active:scale-90 duration-200">
+<span class="material-symbols-outlined text-[#914d00]">arrow_back</span>
+</button>
+<span class="font-['Plus_Jakarta_Sans'] text-xl font-bold tracking-tight text-[#914d00]">Diet Settings</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-container">
+<img alt="Pet Profile" class="w-full h-auto object-cover" data-alt="Close-up portrait of a happy golden retriever with soft sunlight illuminating its fur against a blurred garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcp_5Pb-C-k1uf00fQVbFq1xWE-lnZkOg0ciHb3HNHLd8xudCWX2uDtaP-o_oX8WmQHr1DgWvuUh4N1mkupfrepKiL346JtdOCdVQPBbZG9P6XDpVxKtGRwMsXidzgdPTSs_-VqDuDXPWYW4R8fDAdxYMbRZNvdn3x5J-9XyL21OV-DcMbn6LInynqyL1UWyHloF_y22ktXFwOhd3d1RaFWu3_Zv7-ufPU6HMTy5SFm3j2fL3W1vRhtT2UaJNdEuxvcm73aY0MltI"/>
+</div>
+</div>
+</header>
+<main class="max-w-xl mx-auto px-6 pt-8 pb-12 space-y-10">
+<!-- Hero Section / Context -->
+<section class="space-y-2">
+<p class="font-label text-on-surface-variant uppercase tracking-widest text-[11px] font-bold">Nutrition Plan</p>
+<h1 class="text-3xl font-extrabold tracking-tight text-on-surface">Meal Scheduling</h1>
+<p class="text-on-surface-variant leading-relaxed">Adjust Bello's daily feeding routine to match his activity levels and metabolic needs.</p>
+</section>
+<!-- Frequency Toggle Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold text-on-surface">Daily Frequency</h2>
+<span class="material-symbols-outlined text-tertiary">restaurant</span>
+</div>
+<div class="p-1.5 bg-surface-container rounded-full flex gap-1">
+<button class="flex-1 py-3 px-4 rounded-full text-sm font-bold transition-all duration-300 bg-tertiary-container text-on-tertiary-container shadow-sm">
+                    3 meals/day
+                </button>
+<button class="flex-1 py-3 px-4 rounded-full text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-all">
+                    4 meals/day
+                </button>
+</div>
+</section>
+<!-- Meal Times Form -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold text-on-surface">Schedule</h2>
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary-container/20 rounded-full">Automatic Reminders</span>
+</div>
+<div class="space-y-4">
+<!-- Meal 1 -->
+<div class="group relative flex flex-col gap-2 p-6 rounded-lg bg-surface-container-low border border-outline-variant/10 transition-all hover:bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-secondary-fixed rounded-r-full"></div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">wb_sunny</span> Breakfast
+                    </label>
+<div class="flex items-center justify-between">
+<input class="bg-transparent border-none p-0 text-2xl font-bold text-on-surface focus:ring-0 w-full cursor-pointer" type="time" value="07:30"/>
+<span class="material-symbols-outlined text-outline">edit</span>
+</div>
+</div>
+<!-- Meal 2 -->
+<div class="group relative flex flex-col gap-2 p-6 rounded-lg bg-surface-container-low border border-outline-variant/10 transition-all hover:bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-tertiary-fixed rounded-r-full"></div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">light_mode</span> Lunch
+                    </label>
+<div class="flex items-center justify-between">
+<input class="bg-transparent border-none p-0 text-2xl font-bold text-on-surface focus:ring-0 w-full cursor-pointer" type="time" value="13:00"/>
+<span class="material-symbols-outlined text-outline">edit</span>
+</div>
+</div>
+<!-- Meal 3 -->
+<div class="group relative flex flex-col gap-2 p-6 rounded-lg bg-surface-container-low border border-outline-variant/10 transition-all hover:bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-primary-container rounded-r-full"></div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">dark_mode</span> Dinner
+                    </label>
+<div class="flex items-center justify-between">
+<input class="bg-transparent border-none p-0 text-2xl font-bold text-on-surface focus:ring-0 w-full cursor-pointer" type="time" value="19:30"/>
+<span class="material-symbols-outlined text-outline">edit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Options Card -->
+<section class="p-6 bg-surface-container-highest/30 rounded-lg border border-outline-variant/5">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-white rounded-full">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface">Meal Notifications</h3>
+<p class="text-sm text-on-surface-variant mt-1">Receive a ping 15 minutes before each scheduled meal time.</p>
+</div>
+<div class="ml-auto">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Save Button Container -->
+<div class="fixed bottom-24 left-0 w-full px-6 flex justify-center pointer-events-none">
+<div class="w-full max-w-xl pointer-events-auto">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 active:scale-95 transition-transform duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                    Save Changes
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#fef9f3]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(145,77,0,0.08)]">
+<div class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#fdd34d] dark:bg-[#914d00] text-[#34322c] dark:text-[#fff7f4] rounded-full px-5 py-2 scale-105 active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Settings</span>
+</div>
+</nav>
+</body></html>

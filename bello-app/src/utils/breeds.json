@@ -1,0 +1,1370 @@
+[
+  {
+    "breed": "Affenpinscher",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Afghan Hound",
+    "origin": "Grã- Bretanha"
+  },
+  {
+    "breed": "Airedale Terrier",
+    "origin": "Grã- Bretanha"
+  },
+  {
+    "breed": "Akita",
+    "origin": "Japão",
+    "pesoMacho": 39.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Akita Americano",
+    "origin": "EUA",
+    "pesoMacho": 59.0,
+    "pesoFemea": 45.0
+  },
+  {
+    "breed": "American Bully",
+    "origin": "EUA"
+  },
+  {
+    "breed": "American Pit Bull Terrier",
+    "origin": "EUA"
+  },
+  {
+    "breed": "American Staffordshire Terrier",
+    "origin": "EUA"
+  },
+  {
+    "breed": "Ariege Pointing Dog",
+    "origin": "França"
+  },
+  {
+    "breed": "Australian Cattle Dog",
+    "origin": "Australia",
+    "pesoMacho": 22.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Australian Kelpie",
+    "origin": "Austrália",
+    "pesoMacho": 20.0,
+    "pesoFemea": 18.0
+  },
+  {
+    "breed": "Australian Shepherd",
+    "origin": "EUA",
+    "pesoMacho": 32.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Azawakh",
+    "origin": "França",
+    "pesoMacho": 25.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Basenji",
+    "origin": "África Central",
+    "pesoMacho": 12.0,
+    "pesoFemea": 11.0
+  },
+  {
+    "breed": "Basset Artesiano Normando",
+    "origin": "França"
+  },
+  {
+    "breed": "Basset Azul da Gasconha",
+    "origin": "França"
+  },
+  {
+    "breed": "Basset Fulvo da Bretanha",
+    "origin": "França"
+  },
+  {
+    "breed": "Basset Hound",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 34.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Beagle",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 11.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Beagle Harrier",
+    "origin": "França",
+    "pesoMacho": 11.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Bearded Collie",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 27.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Bedlington Terrier",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 10.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Bichon Frisé",
+    "origin": "Franco/Belga",
+    "pesoMacho": 7.0,
+    "pesoFemea": 6.5
+  },
+  {
+    "breed": "Bichon Havanês",
+    "origin": "Cuba",
+    "pesoMacho": 6.0,
+    "pesoFemea": 5.0
+  },
+  {
+    "breed": "Biewer Terrier",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Billy",
+    "origin": "França"
+  },
+  {
+    "breed": "Boerboel",
+    "origin": "África do Sul",
+    "pesoMacho": 90.0,
+    "pesoFemea": 75.0
+  },
+  {
+    "breed": "Boiadeiro Bernês",
+    "origin": "Suiça",
+    "pesoMacho": 50.0,
+    "pesoFemea": 48.0
+  },
+  {
+    "breed": "Boiadeiro de Entlebuch",
+    "origin": "Suiça",
+    "pesoMacho": 30.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Bolonhês",
+    "origin": "Itália",
+    "pesoMacho": 4.0,
+    "pesoFemea": 4.0
+  },
+  {
+    "breed": "Border Collie",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 20.0,
+    "pesoFemea": 19.0
+  },
+  {
+    "breed": "Border Terrier",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 7.1,
+    "pesoFemea": 6.4
+  },
+  {
+    "breed": "Borzoi",
+    "origin": "Russia",
+    "pesoMacho": 48.0,
+    "pesoFemea": 41.0
+  },
+  {
+    "breed": "Boston Terrier",
+    "origin": "EUA",
+    "pesoMacho": 11.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Bouvier des Flandres",
+    "origin": "Bélgica / França",
+    "pesoMacho": 40.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Boxer",
+    "origin": "Alemanha",
+    "pesoMacho": 32.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Braco Alemão Pelo Curto",
+    "origin": "Alemanha",
+    "pesoMacho": 32.0,
+    "pesoFemea": 27.0
+  },
+  {
+    "breed": "Braco Alemão Pelo Duro",
+    "origin": "Alemanha",
+    "pesoMacho": 32.0,
+    "pesoFemea": 27.0
+  },
+  {
+    "breed": "Braco Húngaro de Pelo Curto",
+    "origin": "Hungria",
+    "pesoMacho": 27.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Braco Húngaro de Pelo Duro",
+    "origin": "Hungria",
+    "pesoMacho": 27.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Braco Italiano",
+    "origin": "Itália",
+    "pesoMacho": 40.0,
+    "pesoFemea": 28.0
+  },
+  {
+    "breed": "Braco de Auvergne",
+    "origin": "França"
+  },
+  {
+    "breed": "Braco de Bourbonnais",
+    "origin": "França"
+  },
+  {
+    "breed": "Buldogue Campeiro",
+    "origin": "Brasil",
+    "pesoMacho": 45.0,
+    "pesoFemea": 40.0
+  },
+  {
+    "breed": "Buldogue Francês",
+    "origin": "França",
+    "pesoMacho": 14.0,
+    "pesoFemea": 13.0
+  },
+  {
+    "breed": "Buldogue Serrano",
+    "origin": "Brasil"
+  },
+  {
+    "breed": "Bull Terrier",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 15.0,
+    "pesoFemea": 14.0
+  },
+  {
+    "breed": "Bull Terrier Miniatura",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 15.0,
+    "pesoFemea": 14.0
+  },
+  {
+    "breed": "Bulldog",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 25.0,
+    "pesoFemea": 23.0
+  },
+  {
+    "breed": "Bulldog Americano",
+    "origin": "EUA",
+    "pesoMacho": 25.0,
+    "pesoFemea": 23.0
+  },
+  {
+    "breed": "Bullmastiff",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 59.0,
+    "pesoFemea": 50.0
+  },
+  {
+    "breed": "Cairn Terrier",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 7.5,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Cane Corso Italiano",
+    "origin": "Itália",
+    "pesoMacho": 50.0,
+    "pesoFemea": 45.0
+  },
+  {
+    "breed": "Cavalier King Charles Spaniel",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.5
+  },
+  {
+    "breed": "Cesky Fousek",
+    "origin": "República Tcheca"
+  },
+  {
+    "breed": "Cesky Terrier",
+    "origin": "República Tcheca",
+    "pesoMacho": 10.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Chesapeake Bay Retriever",
+    "origin": "EUA",
+    "pesoMacho": 36.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Chihuahua",
+    "origin": "México",
+    "pesoMacho": 3.0,
+    "pesoFemea": 3.0
+  },
+  {
+    "breed": "Chow Chow",
+    "origin": "China",
+    "pesoMacho": 32.0,
+    "pesoFemea": 27.0
+  },
+  {
+    "breed": "Chuandong Hound",
+    "origin": "China"
+  },
+  {
+    "breed": "Cimarrón Uruguayo",
+    "origin": "Uruguai"
+  },
+  {
+    "breed": "Cirneco do Etna",
+    "origin": "Itália",
+    "pesoMacho": 12.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Clumber Spaniel",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 39.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Cocker Spaniel Americano",
+    "origin": "EUA",
+    "pesoMacho": 13.0,
+    "pesoFemea": 11.0
+  },
+  {
+    "breed": "Cocker Spaniel Inglês",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 16.0,
+    "pesoFemea": 15.0
+  },
+  {
+    "breed": "Collie Pelo Curto",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 29.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Collie Pelo Longo",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 29.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Coonhound Preto e Castanho",
+    "origin": "EUA",
+    "pesoMacho": 34.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Coton de T uléar",
+    "origin": "Madagascar"
+  },
+  {
+    "breed": "Coton de Tuléar",
+    "origin": "Madagascar",
+    "pesoMacho": 6.0,
+    "pesoFemea": 5.0
+  },
+  {
+    "breed": "Cão Fila de São Miguel",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Cão Lobo Tchecoslovaco",
+    "origin": "Republica da  Tchecoslovaquia"
+  },
+  {
+    "breed": "Cão d'água Frisado",
+    "origin": "Holanda",
+    "pesoMacho": 35.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Cão d'água Português",
+    "origin": "Portugal",
+    "pesoMacho": 27.0,
+    "pesoFemea": 23.0
+  },
+  {
+    "breed": "Cão da Groenlândia",
+    "origin": "Dinamarca",
+    "pesoMacho": 32.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Cão da Montanha dos Pireneus",
+    "origin": "França",
+    "pesoMacho": 54.0,
+    "pesoFemea": 41.0
+  },
+  {
+    "breed": "Cão da Serra da Estrela",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Cão das Montanhas do Atlas",
+    "origin": "Marrocos"
+  },
+  {
+    "breed": "Cão de Castro Laboreiro",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Cão de Crista Chinês",
+    "origin": "China",
+    "pesoMacho": 5.5,
+    "pesoFemea": 5.5
+  },
+  {
+    "breed": "Cão de Santo Humberto",
+    "origin": "Bélgica"
+  },
+  {
+    "breed": "Cão do Canaã",
+    "origin": "Israel"
+  },
+  {
+    "breed": "Dachshund Kaninchen",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Dachshund Miniatura",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Dachshund Standard",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Dandie Dinmont Terrier",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 11.0,
+    "pesoFemea": 11.0
+  },
+  {
+    "breed": "Deerhound",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 50.0,
+    "pesoFemea": 43.0
+  },
+  {
+    "breed": "Dobermann",
+    "origin": "Alemanha",
+    "pesoMacho": 45.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Dogo Argentino",
+    "origin": "Argentina",
+    "pesoMacho": 45.0,
+    "pesoFemea": 43.0
+  },
+  {
+    "breed": "Dogue Alemão",
+    "origin": "Alemanha",
+    "pesoMacho": 90.0,
+    "pesoFemea": 59.0
+  },
+  {
+    "breed": "Dogue Brasileiro",
+    "origin": "Brasil"
+  },
+  {
+    "breed": "Dogue de Bordeaux",
+    "origin": "França",
+    "pesoMacho": 68.0,
+    "pesoFemea": 68.0
+  },
+  {
+    "breed": "Dálmata",
+    "origin": "República Croata",
+    "pesoMacho": 32.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Elkhound Norueguês Cinza",
+    "origin": "Noruega",
+    "pesoMacho": 27.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Encontre na CBKC ... ",
+    "origin": "Grã- Bretanha"
+  },
+  {
+    "breed": "Fila Brasileiro",
+    "origin": "Brasil",
+    "pesoMacho": 82.0,
+    "pesoFemea": 73.0
+  },
+  {
+    "breed": "Flat Coated Retriever",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 36.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Fox Terrier Pelo Duro (W ire)",
+    "origin": "Grã- Bretanha"
+  },
+  {
+    "breed": "Fox Terrier Pelo Duro (Wire)",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 8.5,
+    "pesoFemea": 7.5
+  },
+  {
+    "breed": "Fox Terrier Pelo Liso (Smooth)",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 8.5,
+    "pesoFemea": 7.5
+  },
+  {
+    "breed": "Foxhound Americano",
+    "origin": "EUA",
+    "pesoMacho": 34.0,
+    "pesoFemea": 34.0
+  },
+  {
+    "breed": "Foxhound Inglês",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 34.0,
+    "pesoFemea": 34.0
+  },
+  {
+    "breed": "Galgo Espanhol",
+    "origin": "Espanha",
+    "pesoMacho": 30.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Gascão de Saintongeois",
+    "origin": "França"
+  },
+  {
+    "breed": "Golden Retriever",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 34.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Grande Azul da Gasconha",
+    "origin": "França"
+  },
+  {
+    "breed": "Grande Boiadeiro Suiço",
+    "origin": "Suiça"
+  },
+  {
+    "breed": "Grande Boiadeiro Suíço",
+    "origin": "Suíça",
+    "pesoMacho": 70.0,
+    "pesoFemea": 60.0
+  },
+  {
+    "breed": "Grande Musterlander",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Greyhound",
+    "origin": "Grã- Bretanha",
+    "pesoMacho": 40.0,
+    "pesoFemea": 34.0
+  },
+  {
+    "breed": "Griffon Nivernais",
+    "origin": "França"
+  },
+  {
+    "breed": "Griffon de Aponte de Pêlo Duro Korthals",
+    "origin": "França"
+  },
+  {
+    "breed": "Griffon de Bruxelas",
+    "origin": "Bélgica"
+  },
+  {
+    "breed": "Hokkaido",
+    "origin": "Japão"
+  },
+  {
+    "breed": "Husky Siberiano",
+    "origin": "EUA",
+    "pesoMacho": 27.0,
+    "pesoFemea": 23.0
+  },
+  {
+    "breed": "Irish Soft Coated Wheaten Terrier",
+    "origin": "Irlânda"
+  },
+  {
+    "breed": "Jack Russell Terrier",
+    "origin": "Inglaterra",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Kerry Blue Terrier",
+    "origin": "Irlânda",
+    "pesoMacho": 18.0,
+    "pesoFemea": 17.0
+  },
+  {
+    "breed": "King Charles Spaniel",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 8.0,
+    "pesoFemea": 8.0
+  },
+  {
+    "breed": "Komondor",
+    "origin": "Hungria",
+    "pesoMacho": 60.0,
+    "pesoFemea": 50.0
+  },
+  {
+    "breed": "Kromfohrlünder",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Kuvasz",
+    "origin": "Hungria",
+    "pesoMacho": 52.0,
+    "pesoFemea": 41.0
+  },
+  {
+    "breed": "Labrador Retriever",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 36.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Lagotto Romagnolo",
+    "origin": "Itália",
+    "pesoMacho": 16.0,
+    "pesoFemea": 14.0
+  },
+  {
+    "breed": "Laizhou Hong",
+    "origin": "China"
+  },
+  {
+    "breed": "Lakeland Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.5
+  },
+  {
+    "breed": "Landseer",
+    "origin": "Alemanha / Suiça",
+    "pesoMacho": 68.0,
+    "pesoFemea": 54.0
+  },
+  {
+    "breed": "Leonberger",
+    "origin": "Alemanha",
+    "pesoMacho": 75.0,
+    "pesoFemea": 59.0
+  },
+  {
+    "breed": "Lhasa Apso",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Malamute do Alaska",
+    "origin": "EUA",
+    "pesoMacho": 43.0,
+    "pesoFemea": 38.0
+  },
+  {
+    "breed": "Maltês",
+    "origin": "Itália",
+    "pesoMacho": 4.0,
+    "pesoFemea": 3.5
+  },
+  {
+    "breed": "Manchester Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 10.0,
+    "pesoFemea": 8.0
+  },
+  {
+    "breed": "Mastiff",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 100.0,
+    "pesoFemea": 77.0
+  },
+  {
+    "breed": "Mastiff Tibetano",
+    "origin": "Tibet",
+    "pesoMacho": 73.0,
+    "pesoFemea": 54.0
+  },
+  {
+    "breed": "Mastim Espanhol",
+    "origin": "Espanha"
+  },
+  {
+    "breed": "Mastim dos Pireneus",
+    "origin": "Espanha"
+  },
+  {
+    "breed": "Mastino Napoletano",
+    "origin": "Itália",
+    "pesoMacho": 70.0,
+    "pesoFemea": 60.0
+  },
+  {
+    "breed": "Monster Bull",
+    "origin": "Brasil"
+  },
+  {
+    "breed": "Mudi",
+    "origin": "Hungria"
+  },
+  {
+    "breed": "Norfolk Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 5.5,
+    "pesoFemea": 5.5
+  },
+  {
+    "breed": "Norwich Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 5.5,
+    "pesoFemea": 5.5
+  },
+  {
+    "breed": "Old English Sheepdog",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 45.0,
+    "pesoFemea": 36.0
+  },
+  {
+    "breed": "Ovelheiro Gaúcho",
+    "origin": "Brasil",
+    "pesoMacho": 25.0,
+    "pesoFemea": 22.0
+  },
+  {
+    "breed": "Parson Russell Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Pastor Alemão",
+    "origin": "Alemanha",
+    "pesoMacho": 40.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Pastor Americano Miniatura",
+    "origin": "EUA"
+  },
+  {
+    "breed": "Pastor Belga",
+    "origin": "Bélgica",
+    "pesoMacho": 30.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Pastor Branco Suíço",
+    "origin": "Suiça",
+    "pesoMacho": 40.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Pastor Finlandês da Lapônia",
+    "origin": "Finlândia"
+  },
+  {
+    "breed": "Pastor Holandês",
+    "origin": "Holanda"
+  },
+  {
+    "breed": "Pastor Maremano Abruzês",
+    "origin": "Itália"
+  },
+  {
+    "breed": "Pastor Polonês da Planície",
+    "origin": "Polônia"
+  },
+  {
+    "breed": "Pastor Polonês de T atra",
+    "origin": "Polônia"
+  },
+  {
+    "breed": "Pastor Romeno da Bucovina",
+    "origin": "Romênia"
+  },
+  {
+    "breed": "Pastor da Mantiqueira",
+    "origin": "Brasil"
+  },
+  {
+    "breed": "Pastor da ásia Central",
+    "origin": "Rússia",
+    "pesoMacho": 80.0,
+    "pesoFemea": 65.0
+  },
+  {
+    "breed": "Pastor de Beauce",
+    "origin": "França",
+    "pesoMacho": 39.0,
+    "pesoFemea": 39.0
+  },
+  {
+    "breed": "Pastor de Brie",
+    "origin": "França",
+    "pesoMacho": 41.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Pastor de Kangal",
+    "origin": "Turquia"
+  },
+  {
+    "breed": "Pastor de Shetland",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 12.0,
+    "pesoFemea": 12.0
+  },
+  {
+    "breed": "Pastor do Caucaso",
+    "origin": "Rússia"
+  },
+  {
+    "breed": "Pastor do Cáucaso",
+    "origin": "Rússia",
+    "pesoMacho": 100.0,
+    "pesoFemea": 80.0
+  },
+  {
+    "breed": "Pastor do Leste Europeu",
+    "origin": "Rússia"
+  },
+  {
+    "breed": "Pastor dos Pireneus de Pelo Longo",
+    "origin": "França"
+  },
+  {
+    "breed": "Pelado Peruano",
+    "origin": "Peru",
+    "pesoMacho": 25.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Pequeno Azul da Gasconha",
+    "origin": "França"
+  },
+  {
+    "breed": "Pequeno Cão Leão",
+    "origin": "França",
+    "pesoMacho": 8.0,
+    "pesoFemea": 8.0
+  },
+  {
+    "breed": "Pequeno Lebrel Italiano",
+    "origin": "Itália",
+    "pesoMacho": 5.0,
+    "pesoFemea": 5.0
+  },
+  {
+    "breed": "Pequeno Spaniel Continental - Papillon",
+    "origin": "Franco/Belga",
+    "pesoMacho": 5.0,
+    "pesoFemea": 4.5
+  },
+  {
+    "breed": "Pequinês",
+    "origin": "China",
+    "pesoMacho": 5.5,
+    "pesoFemea": 5.0
+  },
+  {
+    "breed": "Perdigueiro Português",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Petit Basset Griffon V endéen",
+    "origin": "França"
+  },
+  {
+    "breed": "Petit Brabançon",
+    "origin": "Bélgica"
+  },
+  {
+    "breed": "Pharaoh Hound",
+    "origin": "Malta",
+    "pesoMacho": 25.0,
+    "pesoFemea": 23.0
+  },
+  {
+    "breed": "Pinscher Miniatura",
+    "origin": "Alemanha",
+    "pesoMacho": 6.0,
+    "pesoFemea": 6.0
+  },
+  {
+    "breed": "Podengo Andaluz",
+    "origin": "Espanha"
+  },
+  {
+    "breed": "Podengo Canário",
+    "origin": "Espanha"
+  },
+  {
+    "breed": "Podengo Ibicenco",
+    "origin": "Espanha (Ilhas Baleares - Ibiza)",
+    "pesoMacho": 29.0,
+    "pesoFemea": 26.0
+  },
+  {
+    "breed": "Podengo Português",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Pointer Inglês",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 34.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Poodle",
+    "origin": "França",
+    "pesoMacho": 32.0,
+    "pesoFemea": 27.0
+  },
+  {
+    "breed": "Presa Canário",
+    "origin": "Espanha",
+    "pesoMacho": 65.0,
+    "pesoFemea": 55.0
+  },
+  {
+    "breed": "Pug",
+    "origin": "China",
+    "pesoMacho": 8.0,
+    "pesoFemea": 7.5
+  },
+  {
+    "breed": "Puli",
+    "origin": "Hungria"
+  },
+  {
+    "breed": "Pumi",
+    "origin": "Hungria"
+  },
+  {
+    "breed": "Rafeiro do Alentejo",
+    "origin": "Portugal"
+  },
+  {
+    "breed": "Rastreador Brasileiro",
+    "origin": "Brasil",
+    "pesoMacho": 30.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Retriever Nova Escócia Duck T olling",
+    "origin": "Canadá"
+  },
+  {
+    "breed": "Retriever Nova Escócia Duck Tolling",
+    "origin": "Canadá",
+    "pesoMacho": 23.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Rhodesian Ridgback",
+    "origin": "África do Sul"
+  },
+  {
+    "breed": "Rottweiler",
+    "origin": "Alemanha",
+    "pesoMacho": 60.0,
+    "pesoFemea": 48.0
+  },
+  {
+    "breed": "Sabujo Fino Colombiano",
+    "origin": "Colombia"
+  },
+  {
+    "breed": "Saluki",
+    "origin": "Oriente Médio",
+    "pesoMacho": 27.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Samoieda",
+    "origin": "Norte da Rússia e Sibéria",
+    "pesoMacho": 30.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Schipperke",
+    "origin": "Bélgica",
+    "pesoMacho": 9.0,
+    "pesoFemea": 9.0
+  },
+  {
+    "breed": "Schnauzer",
+    "origin": "Alemanha",
+    "pesoMacho": 20.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Schnauzer Gigante",
+    "origin": "Alemanha",
+    "pesoMacho": 48.0,
+    "pesoFemea": 34.0
+  },
+  {
+    "breed": "Schnauzer Miniatura",
+    "origin": "Alemanha",
+    "pesoMacho": 7.0,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Sealyham Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 12.0,
+    "pesoFemea": 10.5
+  },
+  {
+    "breed": "Setter Gordon",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 36.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Setter Inglês",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 36.0,
+    "pesoFemea": 32.0
+  },
+  {
+    "breed": "Setter Irlandês V ermelho",
+    "origin": "Irlânda"
+  },
+  {
+    "breed": "Setter Irlandês V ermelho e Branco",
+    "origin": "Irlânda"
+  },
+  {
+    "breed": "Setter Irlandês Vermelho",
+    "origin": "Irlanda",
+    "pesoMacho": 32.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Setter Irlandês Vermelho e Branco",
+    "origin": "Irlanda",
+    "pesoMacho": 34.0,
+    "pesoFemea": 30.0
+  },
+  {
+    "breed": "Shar Pei",
+    "origin": "China",
+    "pesoMacho": 29.0,
+    "pesoFemea": 29.0
+  },
+  {
+    "breed": "Shiba",
+    "origin": "Japão",
+    "pesoMacho": 14.0,
+    "pesoFemea": 13.0
+  },
+  {
+    "breed": "Shih Tzu",
+    "origin": "Tibet",
+    "pesoMacho": 7.0,
+    "pesoFemea": 6.5
+  },
+  {
+    "breed": "Shikoku",
+    "origin": "Japão"
+  },
+  {
+    "breed": "Silky Terrier Australiano",
+    "origin": "Austrália",
+    "pesoMacho": 5.0,
+    "pesoFemea": 5.0
+  },
+  {
+    "breed": "Skye Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 18.0,
+    "pesoFemea": 16.0
+  },
+  {
+    "breed": "Smoushond Holandês",
+    "origin": "Holanda"
+  },
+  {
+    "breed": "Spaniel Bretão",
+    "origin": "França",
+    "pesoMacho": 18.0,
+    "pesoFemea": 18.0
+  },
+  {
+    "breed": "Spaniel Francês",
+    "origin": "França"
+  },
+  {
+    "breed": "Spaniel Japonês",
+    "origin": "Japão",
+    "pesoMacho": 4.0,
+    "pesoFemea": 4.0
+  },
+  {
+    "breed": "Spaniel T ibetano",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "Spaniel Tibetano",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 7.0,
+    "pesoFemea": 7.0
+  },
+  {
+    "breed": "Spaniel d'água Americano",
+    "origin": "EUA",
+    "pesoMacho": 20.0,
+    "pesoFemea": 18.0
+  },
+  {
+    "breed": "Spaniel d'água Irlandês",
+    "origin": "Irlânda",
+    "pesoMacho": 30.0,
+    "pesoFemea": 26.0
+  },
+  {
+    "breed": "Spaniel da Picardia",
+    "origin": "França"
+  },
+  {
+    "breed": "Spaniel de Ponte Audemer",
+    "origin": "França"
+  },
+  {
+    "breed": "Spinone Italiano",
+    "origin": "Itália"
+  },
+  {
+    "breed": "Spitz Alemão",
+    "origin": "Alemanha",
+    "pesoMacho": 15.0,
+    "pesoFemea": 12.0
+  },
+  {
+    "breed": "Spitz Finlandês",
+    "origin": "Finlândia",
+    "pesoMacho": 15.0,
+    "pesoFemea": 13.0
+  },
+  {
+    "breed": "Spitz Japonês",
+    "origin": "Japão",
+    "pesoMacho": 10.0,
+    "pesoFemea": 10.0
+  },
+  {
+    "breed": "Springer Spaniel Inglês",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "Stabyhoun",
+    "origin": "França"
+  },
+  {
+    "breed": "Staffordshire Bull Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 17.0,
+    "pesoFemea": 15.5
+  },
+  {
+    "breed": "São Bernardo",
+    "origin": "Suiça",
+    "pesoMacho": 82.0,
+    "pesoFemea": 64.0
+  },
+  {
+    "breed": "Terra Nova",
+    "origin": "Canadá",
+    "pesoMacho": 70.0,
+    "pesoFemea": 55.0
+  },
+  {
+    "breed": "Terrier Alemão de Caça - JAGD",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "Terrier Americano Sem Pêlo",
+    "origin": "Estados Unidos da  América"
+  },
+  {
+    "breed": "Terrier Brasileiro",
+    "origin": "Brasil",
+    "pesoMacho": 10.0,
+    "pesoFemea": 8.0
+  },
+  {
+    "breed": "Terrier Escocês",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "Terrier Irlandês",
+    "origin": "Irlanda"
+  },
+  {
+    "breed": "Terrier Irlandês do Glen do Imaal",
+    "origin": "Irlânda"
+  },
+  {
+    "breed": "Terrier Preto da Rússia",
+    "origin": "Rússia"
+  },
+  {
+    "breed": "Terrier Tibetano",
+    "origin": "Tibet"
+  },
+  {
+    "breed": "Thai Ridgeback",
+    "origin": "Tailândia"
+  },
+  {
+    "breed": "Tosa",
+    "origin": "Japão"
+  },
+  {
+    "breed": "Toy Fox terrier",
+    "origin": "EUA"
+  },
+  {
+    "breed": "Treeing W alker Coonhound",
+    "origin": "Estados Unidos"
+  },
+  {
+    "breed": "Veadeiro Nacional",
+    "origin": "Brasil"
+  },
+  {
+    "breed": "Veadeiro Pampeano",
+    "origin": "Brasil",
+    "pesoMacho": 30.0,
+    "pesoFemea": 25.0
+  },
+  {
+    "breed": "Volpino Italiano",
+    "origin": "Itália",
+    "pesoMacho": 5.5,
+    "pesoFemea": 5.5
+  },
+  {
+    "breed": "W eimaraner",
+    "origin": "Alemanha"
+  },
+  {
+    "breed": "W elsh Corgi Cardigan",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "W elsh Corgi Pembroke",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "W elsh Springer Spaniel",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "W elsh Terrier",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "W est Highland White Terrier",
+    "origin": "Grã-Bretanha"
+  },
+  {
+    "breed": "W olfhound Irlandês",
+    "origin": "Irlânda"
+  },
+  {
+    "breed": "Weimaraner",
+    "origin": "Alemanha",
+    "pesoMacho": 40.0,
+    "pesoFemea": 35.0
+  },
+  {
+    "breed": "Welsh Springer Spaniel",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 25.0,
+    "pesoFemea": 20.0
+  },
+  {
+    "breed": "Welsh Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 9.5,
+    "pesoFemea": 9.0
+  },
+  {
+    "breed": "West Highland White Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 10.0,
+    "pesoFemea": 9.0
+  },
+  {
+    "breed": "Whippet",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 14.0,
+    "pesoFemea": 12.0
+  },
+  {
+    "breed": "Wolfhound Irlandês",
+    "origin": "Irlanda",
+    "pesoMacho": 70.0,
+    "pesoFemea": 61.0
+  },
+  {
+    "breed": "Xoloitzcuintle",
+    "origin": "México",
+    "pesoMacho": 18.0,
+    "pesoFemea": 14.0
+  },
+  {
+    "breed": "Yakutian Laika",
+    "origin": "Rússia"
+  },
+  {
+    "breed": "Yorkshire Terrier",
+    "origin": "Grã-Bretanha",
+    "pesoMacho": 3.5,
+    "pesoFemea": 3.0
+  },
+  {
+    "breed": " Australia",
+    "origin": "----------------Page (2) Break----------------"
+  },
+  {
+    "breed": "(https://wa.me/552",
+    "origin": "EUA"
+  }
+]

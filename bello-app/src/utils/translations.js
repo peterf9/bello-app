@@ -1,0 +1,302 @@
+export const translations = {
+  en: {
+    // TopAppBar
+    dietSettings: "Diet Settings",
+    
+    // BottomNav
+    navHome: "Home",
+    navHistory: "History",
+    navProfile: "Profile",
+    navSettings: "Settings",
+
+    // Dashboard
+    dailyProgress: "Daily Progress",
+    todaysMeals: "Today's Meals",
+    mealCompleted: "Meal Completed",
+    goodJob: "Good job! He's well-fed so far.",
+    allDone: "All done for today!",
+    nextMealAt: "Next meal at",
+    tapToMark: "Tap to mark as done",
+    completedText: "Completed",
+    pending: "Pending",
+    totalMeals: "Total",
+    restWell: "Rest well",
+    waterIntake: "Water intake today",
+    activityTotal: "Activity total",
+    
+    // History
+    nutritionLogs: "Nutrition Logs",
+    pastRecords: "Past Records",
+    reviewConsistency: "Review feeding consistency and past meal habits.",
+    mealsCompleted: "meals completed",
+
+    // Profile
+    generalInfo: "General Information",
+    age: "Age",
+    microchipId: "Microchip ID",
+    weight: "Weight",
+    targetPortion: "Target Portion",
+    perMeal: "Per meal",
+    dailyNeed: "Daily Need Formula",
+    daysLeft: "Days Left",
+    perDay: "g / day",
+    editProfile: "Edit Profile",
+    dietCalc: "Diet Calc",
+    petName: "Pet Name",
+    breed: "Breed / Raça",
+    birthDate: "Birth Date",
+    photoUpload: "Photo (Upload)",
+    updateProfile: "Update Profile",
+    adultWeight: "Expected Adult Weight (kg)",
+    gender: "Gender",
+    male: "Male",
+    female: "Female",
+    scanKibbleTable: "Scan Kibble Table",
+    kibbleScanned: "Kibble metrics loaded via AI",
+    giantPuppyAlgo: "Giant Puppy Algorithm",
+    linearInterpolation: "Daily Linear Interpolation",
+    suggestedPortion: "Suggested Portion",
+    preciseDailyTotal: "Precise Daily Total",
+    refInterpolated: "Interpolated Reference",
+    applyPlanning: "Apply to Plan",
+    processing: "Processing variables...",
+    clinicalBlock: "Weaning or lactating phase. The pet is under 2 full months. Consult your Veterinarian.",
+    
+    // Settings
+    nutritionPlan: "Nutrition Plan",
+    mealScheduling: "Meal Scheduling",
+    adjustRoutine: "Adjust {name}'s daily feeding routine to match his activity levels and metabolic needs.",
+    dailyFrequency: "Daily Frequency",
+    mealsPerDay: "meals/day",
+    mealTimes: "Meal Times",
+    saveChanges: "Save Changes",
+    extraMeal: "Extra Meal",
+    snack: "Snack",
+    aiConfigLabel: "AI Scanner (Gemini)",
+    geminiApiKey: "Gemini API Key",
+    Breakfast: "Breakfast",
+    Lunch: "Lunch",
+    Dinner: "Dinner",
+    
+    // Cropper
+    cropPhoto: "Crop Photo",
+    zoom: "Zoom",
+    rotate: "Rotate",
+    confirmEdit: "Confirm Edit",
+    cancel: "Cancel",
+
+    // NFC
+    nfcScanTitle: "Scan Collar Tag",
+    nfcScanDesc: "Bring your phone close to the NFC collar tag to read its ID.",
+    nfcNotSupported: "NFC is not supported or activated on your device.",
+    nfcSuccess: "Tag scanned successfully!",
+    nfcError: "Error reading the tag.",
+    scan: "Scan",
+    stopScan: "Cancel Scan",
+    addApet: "Add new pet",
+    newPetName: "New Pet Name"
+  },
+  pt: {
+    // TopAppBar
+    dietSettings: "Dieta",
+    
+    // BottomNav
+    navHome: "Início",
+    navHistory: "Histórico",
+    navProfile: "Perfil",
+    navSettings: "Ajustes",
+
+    // Dashboard
+    dailyProgress: "Progresso do Dia",
+    todaysMeals: "Refeições Hoje",
+    mealCompleted: "Refeição Completa",
+    goodJob: "Muito bem! Ele está bem alimentado até agora.",
+    allDone: "Tudo pronto por hoje!",
+    nextMealAt: "Próxima refeição às",
+    tapToMark: "Toque para concluir",
+    completedText: "Feito",
+    pending: "Pendente",
+    totalMeals: "Total",
+    restWell: "Descanse bem",
+    waterIntake: "Água ingerida hoje",
+    activityTotal: "Atividade total",
+    
+    // History
+    nutritionLogs: "Registros Nutricionais",
+    pastRecords: "Histórico",
+    reviewConsistency: "Revise a consistência alimentar e hábitos passados.",
+    mealsCompleted: "refeições feias",
+
+    // Profile
+    generalInfo: "Informações Gerais",
+    age: "Idade",
+    microchipId: "ID do Microchip",
+    weight: "Peso Atual",
+    targetPortion: "Porção Alvo",
+    perMeal: "Por pote",
+    dailyNeed: "Fórmula Diária Ideal",
+    daysLeft: "Dias Faltando",
+    perDay: "g / dia",
+    editProfile: "Editar Perfil",
+    dietCalc: "Cálculo Dieta",
+    petName: "Nome do Pet",
+    breed: "Raça",
+    birthDate: "Data de Nasc.",
+    photoUpload: "Foto do Rosto (Upload)",
+    updateProfile: "Atualizar Perfil",
+    adultWeight: "Peso Adulto Esperado (kg)",
+    gender: "Sexo",
+    male: "Macho",
+    female: "Fêmea",
+    scanKibbleTable: "Ler Tabela Embalagem (IA)",
+    kibbleScanned: "Métricas extraídas via IA",
+    giantPuppyAlgo: "Algoritmo Cão Gigante",
+    linearInterpolation: "Interpolação Linear Diária",
+    suggestedPortion: "Porção Sugerida",
+    preciseDailyTotal: "Total Diário Preciso",
+    refInterpolated: "Ref. Interpolada",
+    applyPlanning: "Salvar na Rotina",
+    processing: "Cruzando variáveis de crescimento...",
+    clinicalBlock: "Desmame ou fase lactante. O pet tem menos de 2 meses completos. Consulte seu Médico Veterinário.",
+    
+    // Settings
+    nutritionPlan: "Plano Alimentar",
+    mealScheduling: "Grade Diária",
+    adjustRoutine: "Ajuste a rotina de alimentação alimentar do {name} para acompanhar seu metabolismo atual.",
+    dailyFrequency: "Frequência",
+    mealsPerDay: "refeições/dia",
+    mealTimes: "Horários",
+    saveChanges: "Salvar ",
+    extraMeal: "Tigela Extra",
+    snack: "Lanchinho",
+    aiConfigLabel: "Scanner de IA (Gemini)",
+    geminiApiKey: "Chave API do Gemini",
+    Breakfast: "Café da Manhã",
+    Lunch: "Almoço",
+    Dinner: "Jantar",
+    
+    // Cropper
+    cropPhoto: "Ajustar Foto",
+    zoom: "Aproximação",
+    rotate: "Girar",
+    confirmEdit: "Confirmar Edição",
+    cancel: "Cancelar",
+
+    // NFC
+    nfcScanTitle: "Ler Tag da Coleira",
+    nfcScanDesc: "Aproxime seu celular da tag NFC na coleira para ler o ID.",
+    nfcNotSupported: "Seu aparelho não suporta NFC ou está desativado.",
+    nfcSuccess: "Tag lida com sucesso!",
+    nfcError: "Erro ao ler a tag.",
+    scan: "Ler Chip",
+    stopScan: "Cancelar Leitura",
+    addApet: "Adicionar novo pet",
+    newPetName: "Nome do Novo Cão"
+  },
+  es: {
+    // TopAppBar
+    dietSettings: "Ajustes Dieta",
+    
+    // BottomNav
+    navHome: "Inicio",
+    navHistory: "Historial",
+    navProfile: "Perfil",
+    navSettings: "Ajustes",
+
+    // Dashboard
+    dailyProgress: "Progreso Diario",
+    todaysMeals: "Comidas de Hoy",
+    mealCompleted: "Comida Completada",
+    goodJob: "¡Buen trabajo! Está bien alimentado.",
+    allDone: "¡Todo listo por hoy!",
+    nextMealAt: "Próxima comida a las",
+    tapToMark: "Toca para completar",
+    completedText: "Listo",
+    pending: "Pendiente",
+    totalMeals: "Total",
+    restWell: "Descansa bien",
+    waterIntake: "Agua ingerida hoy",
+    activityTotal: "Actividad total",
+    
+    // History
+    nutritionLogs: "Registros Nutricionales",
+    pastRecords: "Historial Analítico",
+    reviewConsistency: "Revisa la consistencia y los hábitos alimenticios.",
+    mealsCompleted: "comidas completas",
+
+    // Profile
+    generalInfo: "Información General",
+    age: "Edad",
+    microchipId: "ID del Microchip",
+    weight: "Peso Actual",
+    targetPortion: "Porción Objetivo",
+    perMeal: "Por plato",
+    dailyNeed: "Necesidad Diaria",
+    daysLeft: "Días Restantes",
+    perDay: "g / día",
+    editProfile: "Editar Perfil",
+    dietCalc: "Calc. Dieta",
+    petName: "Nombre del Pet",
+    breed: "Raza",
+    birthDate: "Fecha de Nac.",
+    photoUpload: "Subir Foto",
+    updateProfile: "Actualizar Perfil",
+    adultWeight: "Peso Adulto Esperado (kg)",
+    gender: "Sexo",
+    male: "Macho",
+    female: "Hembra",
+    scanKibbleTable: "Escanear Tabla de Comida",
+    kibbleScanned: "Métricas extraídas por IA",
+    giantPuppyAlgo: "Algoritmo Raza Gigante",
+    linearInterpolation: "Interpolación Lineal",
+    suggestedPortion: "Porción Sugerida",
+    preciseDailyTotal: "Total Diario Exacto",
+    refInterpolated: "Ref. Interpolada",
+    applyPlanning: "Aplicar en Rutina",
+    processing: "Cruzando variables...",
+    clinicalBlock: "Destete o lactancia. El animal tiene menos de 2 meses completos. Consulta a un veterinario.",
+    
+    // Settings
+    nutritionPlan: "Plan Nutricional",
+    mealScheduling: "Horarios",
+    adjustRoutine: "Ajusta la rutina diaria de {name} según sus necesidades metabólicas.",
+    dailyFrequency: "Frecuencia Diaria",
+    mealsPerDay: "comidas/día",
+    mealTimes: "Tiempos de Comida",
+    saveChanges: "Guardar Cambios",
+    extraMeal: "Comida Extra",
+    snack: "Merienda",
+    aiConfigLabel: "Escáner AI (Gemini)",
+    geminiApiKey: "Gemini API Key",
+    Breakfast: "Desayuno",
+    Lunch: "Almuerzo",
+    Dinner: "Cena",
+    
+    // Cropper
+    cropPhoto: "Ajustar Foto",
+    zoom: "Acercar",
+    rotate: "Girar",
+    confirmEdit: "Confirmar Edición",
+    cancel: "Cancelar",
+
+    // NFC
+    nfcScanTitle: "Leer Tag del Collar",
+    nfcScanDesc: "Acerca tu celular al tag NFC del collar para leer el ID.",
+    nfcNotSupported: "Tu dispositivo no soporta NFC o está desactivado.",
+    nfcSuccess: "Tag leído con éxito!",
+    nfcError: "Error al leer el tag.",
+    scan: "Escanear",
+    stopScan: "Cancelar Escaneo",
+    addApet: "Añadir nuevo perro",
+    newPetName: "Nombre del Nuevo Perro"
+  }
+};
+
+export function t(key, lang = 'en', replacers = {}) {
+  const dictionary = translations[lang] || translations['en'];
+  let text = dictionary[key] || key;
+  Object.keys(replacers).forEach(r => {
+    text = text.replace(`{${r}}`, replacers[r]);
+  });
+  return text;
+}

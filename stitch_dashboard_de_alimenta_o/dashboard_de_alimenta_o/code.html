@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bello - Meal Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#b7eaff",
+              "surface-container": "#f2ede6",
+              "on-tertiary-fixed": "#463600",
+              "on-secondary-fixed": "#004557",
+              "on-primary-fixed": "#401f00",
+              "secondary-dim": "#005b71",
+              "tertiary-fixed-dim": "#eec540",
+              "on-surface-variant": "#625f58",
+              "on-tertiary-fixed-variant": "#675200",
+              "surface-container-high": "#ede8df",
+              "surface": "#fef9f3",
+              "on-tertiary-container": "#5c4900",
+              "on-surface": "#34322c",
+              "surface-container-highest": "#e7e2d9",
+              "on-secondary": "#f1faff",
+              "surface-bright": "#fef9f3",
+              "secondary-container": "#b7eaff",
+              "inverse-surface": "#0f0e0b",
+              "primary-container": "#ffaf6d",
+              "primary-dim": "#804300",
+              "primary-fixed-dim": "#f89e4f",
+              "surface-variant": "#e7e2d9",
+              "inverse-on-surface": "#a09c97",
+              "on-background": "#34322c",
+              "error-dim": "#821a01",
+              "outline": "#7e7a73",
+              "inverse-primary": "#fca151",
+              "on-tertiary": "#fff8ee",
+              "secondary": "#006880",
+              "tertiary": "#745c00",
+              "on-error": "#fff7f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#914d00",
+              "surface-dim": "#dfd9cf",
+              "secondary-fixed-dim": "#8ce0ff",
+              "surface-container-low": "#f8f3ec",
+              "primary": "#914d00",
+              "error-container": "#fa7150",
+              "tertiary-fixed": "#fdd34d",
+              "on-error-container": "#671200",
+              "primary-fixed": "#ffaf6d",
+              "tertiary-dim": "#665100",
+              "tertiary-container": "#fdd34d",
+              "error": "#aa371c",
+              "outline-variant": "#b6b1a9",
+              "background": "#fef9f3",
+              "on-primary-container": "#5f3000",
+              "on-primary-fixed-variant": "#6c3800",
+              "on-primary": "#fff7f4",
+              "on-secondary-container": "#00596f",
+              "on-secondary-fixed-variant": "#00647c"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(254, 249, 243, 0.6);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fef9f3] dark:bg-stone-950">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Bello" class="w-full h-full object-cover" data-alt="Close-up portrait of a happy golden retriever dog with a soft blurred garden background in warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2mJQCMPDqF96D_z-i7Tcxnh1wCEFD3d6JvwGmwFI3Zl1HDt0lQJkfnXBwi4C6v2HBXUQRhNRuiX0I6fPywq-1sx5NhDIOHMCvADVZBcQYzlLBOPHU2N_UgCNRl-yTyb26x2JRHetLiMGnXcuzXFYeerpFjPxg3JIYBNUBdm0ZRC4XPRA1YLhqnRUKWMslekzq86ziBC8JAE9GSNDjP3MICjwho-oJAzcFHga091vHxfgKKhg56iI5Ye6Z0EGrM4zRaJKGQr-A-K4"/>
+</div>
+<h1 class="font-headline text-xl font-bold tracking-tight text-[#914d00] dark:text-[#ffaf6d]">Bello</h1>
+</div>
+<button class="text-[#914d00] dark:text-[#ffaf6d] hover:bg-[#f8f3ec]/50 dark:hover:bg-stone-800/50 transition-colors p-2 rounded-full active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-xl mx-auto px-6 pt-8 space-y-8">
+<!-- Hero Section: Next Meal -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-8 text-on-primary shadow-lg shadow-primary/10">
+<div class="relative z-10">
+<p class="font-label text-xs uppercase tracking-[0.2em] opacity-80 mb-2">Daily Schedule</p>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight mb-1">Next meal at 18:00</h2>
+<p class="text-sm opacity-90">Dinner is the final goal for today</p>
+</div>
+<!-- Decorative Grain/Shape -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-6 top-6">
+<span class="material-symbols-outlined text-6xl opacity-20" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+</section>
+<!-- Meal Tracking Grid -->
+<section class="space-y-4">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-headline text-lg font-bold">Today's Meals</h3>
+<span class="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">3 Total Slots</span>
+</div>
+<!-- Breakfast Slot (Completed) -->
+<div class="group relative bg-surface-container-low rounded-lg p-5 flex items-center justify-between border-l-4 border-secondary transition-all hover:bg-surface-container">
+<div class="flex items-center gap-5">
+<div class="flex flex-col">
+<span class="font-label text-[11px] font-bold uppercase text-on-surface-variant tracking-widest">08:00 AM</span>
+<span class="font-headline text-xl font-bold text-on-surface">Breakfast</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
+                        Completed
+                    </div>
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Lunch Slot (Completed) -->
+<div class="group relative bg-surface-container-low rounded-lg p-5 flex items-center justify-between border-l-4 border-secondary transition-all hover:bg-surface-container">
+<div class="flex items-center gap-5">
+<div class="flex flex-col">
+<span class="font-label text-[11px] font-bold uppercase text-on-surface-variant tracking-widest">13:00 PM</span>
+<span class="font-headline text-xl font-bold text-on-surface">Lunch</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
+                        Completed
+                    </div>
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Dinner Slot (Pending) -->
+<div class="group relative bg-surface-container-highest rounded-lg p-5 flex items-center justify-between border-l-4 border-tertiary transition-all">
+<div class="flex items-center gap-5">
+<div class="flex flex-col">
+<span class="font-label text-[11px] font-bold uppercase text-on-surface-variant tracking-widest">18:00 PM</span>
+<span class="font-headline text-xl font-bold text-on-surface">Dinner</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
+                        Pending
+                    </div>
+<button class="w-12 h-12 rounded-full border-2 border-tertiary flex items-center justify-center text-tertiary bg-surface-container-lowest hover:bg-tertiary hover:text-on-tertiary active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl">radio_button_unchecked</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Summary & Stats Bento Card -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary text-3xl">water_drop</span>
+<div>
+<h4 class="font-headline text-2xl font-extrabold text-on-surface">1.2L</h4>
+<p class="text-xs text-on-surface-variant font-medium">Water intake today</p>
+</div>
+</div>
+<div class="bg-secondary-container/30 p-6 rounded-lg flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-secondary text-3xl">exercise</span>
+<div>
+<h4 class="font-headline text-2xl font-extrabold text-on-surface">45m</h4>
+<p class="text-xs text-on-surface-variant font-medium">Activity total</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#fef9f3]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(145,77,0,0.08)] rounded-t-[2.5rem]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#fdd34d] dark:bg-[#914d00] text-[#34322c] dark:text-[#fff7f4] rounded-full px-5 py-2 scale-105 active:scale-95 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">History</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#625f58] dark:text-stone-400 opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+</body></html>

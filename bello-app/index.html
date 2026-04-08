@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bello - Meal Tracker</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#b7eaff",
+              "surface-container": "#f2ede6",
+              "on-tertiary-fixed": "#463600",
+              "on-secondary-fixed": "#004557",
+              "on-primary-fixed": "#401f00",
+              "secondary-dim": "#005b71",
+              "tertiary-fixed-dim": "#eec540",
+              "on-surface-variant": "#625f58",
+              "on-tertiary-fixed-variant": "#675200",
+              "surface-container-high": "#ede8df",
+              "surface": "#fef9f3",
+              "on-tertiary-container": "#5c4900",
+              "on-surface": "#34322c",
+              "surface-container-highest": "#e7e2d9",
+              "on-secondary": "#f1faff",
+              "surface-bright": "#fef9f3",
+              "secondary-container": "#b7eaff",
+              "inverse-surface": "#0f0e0b",
+              "primary-container": "#ffaf6d",
+              "primary-dim": "#804300",
+              "primary-fixed-dim": "#f89e4f",
+              "surface-variant": "#e7e2d9",
+              "inverse-on-surface": "#a09c97",
+              "on-background": "#34322c",
+              "error-dim": "#821a01",
+              "outline": "#7e7a73",
+              "inverse-primary": "#fca151",
+              "on-tertiary": "#fff8ee",
+              "secondary": "#006880",
+              "tertiary": "#745c00",
+              "on-error": "#fff7f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-tint": "#914d00",
+              "surface-dim": "#dfd9cf",
+              "secondary-fixed-dim": "#8ce0ff",
+              "surface-container-low": "#f8f3ec",
+              "primary": "#914d00",
+              "error-container": "#fa7150",
+              "tertiary-fixed": "#fdd34d",
+              "on-error-container": "#671200",
+              "primary-fixed": "#ffaf6d",
+              "tertiary-dim": "#665100",
+              "tertiary-container": "#fdd34d",
+              "error": "#aa371c",
+              "outline-variant": "#b6b1a9",
+              "background": "#fef9f3",
+              "on-primary-container": "#5f3000",
+              "on-primary-fixed-variant": "#6c3800",
+              "on-primary": "#fff7f4",
+              "on-secondary-container": "#00596f",
+              "on-secondary-fixed-variant": "#00647c"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      body {
+        background-color: #fef9f3;
+        color: #34322c;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        min-height: max(884px, 100dvh);
+      }
+      h1, h2, h3, .font-headline {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .glass-card {
+        background: rgba(254, 249, 243, 0.6);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+  </head>
+  <body class="bg-surface font-body text-on-surface min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

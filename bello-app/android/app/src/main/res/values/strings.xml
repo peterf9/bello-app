@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Bello</string>
+    <string name="title_activity_main">Bello</string>
+    <string name="package_name">com.bello.app</string>
+    <string name="custom_url_scheme">com.bello.app</string>
+</resources>
