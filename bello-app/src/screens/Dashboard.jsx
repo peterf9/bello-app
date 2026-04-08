@@ -6,6 +6,30 @@ export default function Dashboard({ appState, updateState }) {
   const logs = appState?.logs || {};
   const today = new Date().toISOString().split("T")[0];
   const todayLogs = logs[today] || [];
+  const dayOfWeek = new Date().getDay();
+
+  const getExactAge = (dateString) => {
+    if (!dateString) return { months: 3 };
+    const bDate = new Date(dateString);
+    const now = new Date();
+    let months = (now.getFullYear() - bDate.getFullYear()) * 12 + (now.getMonth() - bDate.getMonth());
+    if (now.getDate() < bDate.getDate()) months--;
+    return { months };
+  };
+  const isAdult = getExactAge(appState?.petInfo?.birthDate).months >= 12;
+
+  // For adults, we dynamically compute today's portions
+  const meals = (schedule.meals || []).map((meal, idx) => {
+    if (isAdult) {
+      const base = parseInt(appState?.petInfo?.foodDailyBase, 10) || 300;
+      const percentages = appState?.petInfo?.adultWeeklyPercentages || {};
+      const pct = percentages[dayOfWeek] ?? 50;
+      if (idx === 0) return { ...meal, grams: Math.round(base * (pct / 100)) };
+      if (idx === 1) return { ...meal, grams: Math.round(base - Math.round(base * (pct / 100))) };
+      return { ...meal, grams: 0 };
+    }
+    return meal;
+  });
 
   const handleToggleMeal = (mealId) => {
     updateState((prev) => {
@@ -56,7 +80,7 @@ export default function Dashboard({ appState, updateState }) {
     });
   };
 
-  const nextMeal = schedule.meals?.find((meal) => !todayLogs.some(log => (typeof log === 'string' ? log : log.id) === meal.id)) || schedule.meals?.[0];
+  const nextMeal = meals.find((meal) => !todayLogs.some(log => (typeof log === 'string' ? log : log.id) === meal.id)) || meals[0];
 
   return (
     <main className="max-w-xl mx-auto px-6 pt-8 pb-32 space-y-8">
@@ -82,7 +106,7 @@ export default function Dashboard({ appState, updateState }) {
           <span className="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">{schedule.meals?.length || 0} {t("totalMeals")}</span>
         </div>
 
-        {schedule.meals?.map((meal) => {
+        {meals.map((meal) => {
           const logItem = todayLogs.find(log => (typeof log === 'string' ? log : log.id) === meal.id);
           const isCompleted = !!logItem;
           const completedAt = typeof logItem === 'object' ? logItem.completedAt : null;

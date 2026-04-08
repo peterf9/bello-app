@@ -45,7 +45,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
     adultWeight: petInfo.adultWeight || "30",
     gender: petInfo.gender || "male",
     manualGrid: petInfo.manualGrid || [],
-    firstMealPercentage: petInfo.firstMealPercentage || 50
+    adultWeeklyPercentages: petInfo.adultWeeklyPercentages || { 0: 50, 1: 50, 2: 50, 3: 50, 4: 50, 5: 50, 6: 50 }
   });
 
   const handleFormChange = (field, value) => {
@@ -191,10 +191,9 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
 
     if (isAdult) {
         actualFreq = 2; // Always 2 for adult in this specific logic
-        const p1 = parseInt(profileForm.firstMealPercentage || 50, 10);
-        meal1Grams = Math.round(base * (p1 / 100));
-        meal2Grams = Math.round(base - meal1Grams);
-        calcDetails = `Adulto: Divisão de ${p1}% (${meal1Grams}g) e ${100-p1}% (${meal2Grams}g).`;
+        // We'll show an overview but not necessarily a single calculation here
+        // as the percentages vary per day. 
+        calcDetails = `Adulto: Plano semanal de 2 refeições ativado. Gramatura base fixa de ${base}g diários.`;
     } else {
         meal1Grams = Math.round(base / freq);
         meal2Grams = meal1Grams;
@@ -300,7 +299,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
           adultWeight: parseFloat(profileForm.adultWeight),
           gender: profileForm.gender,
           manualGrid: profileForm.manualGrid,
-          firstMealPercentage: parseInt(profileForm.firstMealPercentage, 10)
+          adultWeeklyPercentages: profileForm.adultWeeklyPercentages
         }
       }));
     }
@@ -451,25 +450,6 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
                 <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">Meta Diária Fixa</span>
                 <input type="number" value={profileForm.foodDailyBase} onChange={e=>setProfileForm({...profileForm, foodDailyBase: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
               </div>
-
-              {isAdult && (
-                <div className="bg-orange-50 dark:bg-orange-950/20 p-4 rounded-xl border border-orange-200 dark:border-orange-900/50">
-                  <span className="text-xs font-bold text-orange-800 dark:text-orange-300 uppercase tracking-wider mb-1 block">% Primeira Refeição (Adulto)</span>
-                  <div className="flex items-center gap-3">
-                    <input 
-                      type="range" 
-                      min="10" 
-                      max="90" 
-                      step="5" 
-                      value={profileForm.firstMealPercentage} 
-                      onChange={e=>setProfileForm({...profileForm, firstMealPercentage: e.target.value})} 
-                      className="flex-1 accent-orange-600" 
-                    />
-                    <span className="font-bold text-orange-700 dark:text-orange-400 w-12 text-right">{profileForm.firstMealPercentage}%</span>
-                  </div>
-                  <p className="text-[10px] text-orange-600/70 mt-2 font-medium">A segunda refeição será automaticamente {100 - profileForm.firstMealPercentage}%.</p>
-                </div>
-              )}
 
 
               <div className="grid grid-cols-2 gap-4">
@@ -678,8 +658,69 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
                  </div>
               )}
 
-              {/* MANUAL GRID PLANNER inside Calculator */}
-              <div className="bg-surface-container p-4 rounded-xl border border-primary-container/50 shadow-sm relative overflow-hidden">
+              {/* WEEKLY PLANNER FOR ADULTS */}
+              {isAdult && (
+                <div className="space-y-4">
+                  <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
+                    <h5 className="font-bold text-sm text-primary mb-1">Planejador Semanal de Porcentagem</h5>
+                    <p className="text-[10px] text-on-surface-variant">Defina a porcentagem da primeira refeição para cada dia.</p>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {[
+                      { id: 1, label: "Segunda" },
+                      { id: 2, label: "Terça" },
+                      { id: 3, label: "Quarta" },
+                      { id: 4, label: "Quinta" },
+                      { id: 5, label: "Sexta" },
+                      { id: 6, label: "Sábado" },
+                      { id: 0, label: "Domingo" }
+                    ].map((day) => {
+                      const pct = profileForm.adultWeeklyPercentages[day.id] || 50;
+                      const base = parseInt(profileForm.foodDailyBase, 10) || 300;
+                      const m1 = Math.round(base * (pct / 100));
+                      const m2 = base - m1;
+                      
+                      return (
+                        <div key={day.id} className="bg-surface-container-low p-3 rounded-xl border border-stone-100 dark:border-stone-800">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="font-bold text-xs text-on-surface">{day.label}</span>
+                            <div className="flex gap-2 text-[10px] font-bold">
+                               <span className="text-primary">{m1}g</span>
+                               <span className="text-stone-400">/</span>
+                               <span className="text-secondary">{m2}g</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <input 
+                              type="range" 
+                              min="10" 
+                              max="90" 
+                              step="5" 
+                              value={pct} 
+                              onChange={e => {
+                                setProfileForm({
+                                  ...profileForm,
+                                  adultWeeklyPercentages: {
+                                    ...profileForm.adultWeeklyPercentages,
+                                    [day.id]: parseInt(e.target.value, 10)
+                                  }
+                                });
+                              }}
+                              className="flex-1 accent-primary" 
+                            />
+                            <span className="font-bold text-primary w-10 text-right text-xs">{pct}%</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* MANUAL GRID PLANNER inside Calculator (PUPPY ONLY) */}
+              {!isAdult && (
+                <div className="bg-surface-container p-4 rounded-xl border border-primary-container/50 shadow-sm relative overflow-hidden">
                  <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full flex items-start justify-end p-2">
                     <span className="material-symbols-outlined text-primary/40 text-xl">table_chart</span>
                  </div>
@@ -748,7 +789,8 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
                         </button>
                      </div>
                  )}
-              </div>
+                </div>
+              )}
 
 
               {/* Save */}
