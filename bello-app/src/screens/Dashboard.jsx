@@ -103,7 +103,7 @@ export default function Dashboard({ appState, updateState }) {
       <section className="space-y-4">
         <div className="flex items-center justify-between mb-4 px-2">
           <h3 className="font-headline text-lg font-bold">{t("todaysMeals")}</h3>
-          <span className="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">{schedule.meals?.length || 0} {t("totalMeals")}</span>
+          <span className="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">{meals.length} {t("totalMeals")}</span>
         </div>
 
         {meals.map((meal) => {

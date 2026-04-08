@@ -249,18 +249,19 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
       updateState(prev => {
         let newMeals = [...(prev.schedule.meals || [])];
         if (isAdult) {
-          // If adult, ensure we have at least 2 meals and set their grams
-          // If there are more than 2, the rest might be snacks or empty
-          if (newMeals.length < 2) {
-             newMeals = [
-               { id: 'm1', time: '08:00', name: 'Breakfast' },
-               { id: 'm2', time: '18:00', name: 'Dinner' }
-             ];
+          // Force exactly 2 meals for adults to avoid leftovers from puppy stage
+          if (newMeals.length > 2) {
+            newMeals = newMeals.slice(0, 2);
+          } else if (newMeals.length < 2) {
+            newMeals = [
+              { id: 'm1', time: '08:00', name: 'Café da Manhã' },
+              { id: 'm2', time: '18:00', name: 'Jantar' }
+            ];
           }
           newMeals = newMeals.map((m, idx) => {
             if (idx === 0) return { ...m, grams: calcResult.meal1 };
             if (idx === 1) return { ...m, grams: calcResult.meal2 };
-            return { ...m, grams: 0 }; // Extra meals are zeroed out or snacks
+            return m;
           });
         } else {
           // Puppy: equal distribution or whatever interpolation says
@@ -269,11 +270,17 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
 
         return {
           ...prev,
+          petInfo: {
+            ...prev.petInfo,
+            foodDailyBase: profileForm.foodDailyBase,
+            adultWeeklyPercentages: profileForm.adultWeeklyPercentages,
+            manualGrid: isAdult ? prev.petInfo.manualGrid : profileForm.manualGrid
+          },
           schedule: {
             ...prev.schedule,
             gramsPerMeal: calcResult.portion, // Fallback for general display
             totalGrams: calcResult.total,
-            frequency: calcResult.frequency,
+            frequency: isAdult ? 2 : calcResult.frequency,
             meals: newMeals
           }
         };
@@ -373,8 +380,8 @@ export default function Profile({ rootState, appState, updateState, onDeletePet 
           </div>
           <div>
             <p className="font-label text-xs font-bold uppercase tracking-wider text-on-tertiary-container">{t("targetPortion")}</p>
-            <p className="font-headline text-3xl font-bold text-on-tertiary-container">{schedule.gramsPerMeal || '---'}g</p>
-            <p className="text-[10px] font-medium text-on-tertiary-container/70 mt-1">{t("perMeal")} ({schedule.frequency || 3}x)</p>
+            <p className="font-headline text-3xl font-bold text-on-tertiary-container">{petInfo.foodDailyBase || '---'}g</p>
+            <p className="text-[10px] font-medium text-on-tertiary-container/70 mt-1">{t("perDay")} ({schedule.frequency || 3}x)</p>
           </div>
         </div>
         
