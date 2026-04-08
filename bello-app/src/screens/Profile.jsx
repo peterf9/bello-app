@@ -1,10 +1,11 @@
 import { useState, useCallback } from "react";
 import Cropper from "react-easy-crop";
-import { t } from "../utils/translations";
+import { useTranslation } from "react-i18next";
 import { getCroppedImgBase64 } from "../utils/cropImage";
 import breedData from "../utils/breeds.json";
 
-export default function Profile({ rootState, appState, updateState, onDeletePet, lang }) {
+export default function Profile({ rootState, appState, updateState, onDeletePet }) {
+  const { t, i18n } = useTranslation();
   const petInfo = appState?.petInfo || {};
   const schedule = appState?.schedule || {};
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -118,7 +119,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
     const diffTime = Math.abs(nextBday - today);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-    const formatted = birthDate.toLocaleDateString(lang === 'pt' ? 'pt-BR' : lang === 'es' ? 'es-ES' : 'en-US', { month: 'long', day: 'numeric' });
+    const formatted = birthDate.toLocaleDateString(i18n.language === 'pt' ? 'pt-BR' : 'en-US', { month: 'long', day: 'numeric' });
     return { formatted, daysLeft: diffDays };
   };
 
@@ -186,7 +187,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
     setNfcError(null);
     try {
       if (!("NDEFReader" in window)) {
-        setNfcError(t("nfcNotSupported", lang));
+        setNfcError(t("nfcNotSupported"));
         return;
       }
       const ndef = new window.NDEFReader();
@@ -203,11 +204,11 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
         setIsScanningNfc(false);
       });
       ndef.addEventListener("readingerror", () => {
-        setNfcError(t("nfcError", lang));
+        setNfcError(t("nfcError"));
       });
     } catch (error) {
        console.error(error);
-       setNfcError(t("nfcError", lang));
+       setNfcError(t("nfcError"));
     }
   };
 
@@ -284,7 +285,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
                     className="bg-primary text-on-primary font-body font-semibold py-2 px-4 rounded-full flex items-center gap-2 transition-transform active:scale-95 shadow-md shadow-primary/20"
                   >
                     <span className="material-symbols-outlined text-lg">calculate</span>
-                    {t("dietCalc", lang)}
+                    {t("dietCalc")}
                   </button>
                 </div>
               </div>
@@ -300,7 +301,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
             <span className="material-symbols-outlined text-on-secondary-container">fitness_center</span>
           </div>
           <div>
-            <p className="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">{t("weight", lang)}</p>
+            <p className="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">{t("weight")}</p>
             <p className="font-headline text-3xl font-bold text-on-surface">{petInfo.weight} <span className="text-lg font-medium text-on-surface-variant">kg</span></p>
             <p className="text-[10px] font-medium text-primary mt-1 border border-primary/20 bg-primary-container/30 px-2 py-0.5 rounded-sm inline-block">Adulto: {petInfo.adultWeight}kg</p>
           </div>
@@ -311,9 +312,9 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
             <span className="material-symbols-outlined text-tertiary-fixed" style={{ fontVariationSettings: "'FILL' 1" }}>restaurant</span>
           </div>
           <div>
-            <p className="font-label text-xs font-bold uppercase tracking-wider text-on-tertiary-container">{t("targetPortion", lang)}</p>
+            <p className="font-label text-xs font-bold uppercase tracking-wider text-on-tertiary-container">{t("targetPortion")}</p>
             <p className="font-headline text-3xl font-bold text-on-tertiary-container">{schedule.gramsPerMeal || '---'}g</p>
-            <p className="text-[10px] font-medium text-on-tertiary-container/70 mt-1">{t("perMeal", lang)} ({schedule.frequency || 3}x)</p>
+            <p className="text-[10px] font-medium text-on-tertiary-container/70 mt-1">{t("perMeal")} ({schedule.frequency || 3}x)</p>
           </div>
         </div>
         
@@ -323,13 +324,13 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
               <span className="material-symbols-outlined text-primary text-2xl">scale</span>
             </div>
             <div>
-              <p className="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">{t("dailyNeed", lang)}</p>
-              <p className="font-headline text-xl font-bold text-on-surface">{schedule.totalGrams || '--'}{t("perDay", lang)}</p>
+              <p className="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">{t("dailyNeed")}</p>
+              <p className="font-headline text-xl font-bold text-on-surface">{schedule.totalGrams || '--'}{t("perDay")}</p>
             </div>
           </div>
           <div className="text-right">
             <p className="font-headline text-2xl font-bold text-primary">{bdayInfo.daysLeft}</p>
-            <p className="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">{t("daysLeft", lang)}</p>
+            <p className="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">{t("daysLeft")}</p>
           </div>
         </div>
       </section>
@@ -344,16 +345,16 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
             >
               <span className="material-symbols-outlined">close</span>
             </button>
-            <h3 className="font-headline text-2xl font-bold text-on-surface mb-6">{t("editProfile", lang)}</h3>
+            <h3 className="font-headline text-2xl font-bold text-on-surface mb-6">{t("editProfile")}</h3>
             
             <div className="space-y-4 max-h-[60vh] overflow-y-auto pb-4 pr-2">
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("petName", lang)}</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("petName")}</span>
                 <input type="text" value={profileForm.name} onChange={e=>setProfileForm({...profileForm, name: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
               </div>
 
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("breed", lang)}</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("breed")}</span>
                 <select 
                   value={profileForm.breed} 
                   onChange={e => handleFormChange('breed', e.target.value)} 
@@ -367,14 +368,14 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
               </div>
 
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("gender", lang)}</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("gender")}</span>
                 <select 
                   value={profileForm.gender} 
                   onChange={e => handleFormChange('gender', e.target.value)} 
                   className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1"
                 >
-                  <option value="male">{t("male", lang)}</option>
-                  <option value="female">{t("female", lang)}</option>
+                  <option value="male">{t("male")}</option>
+                  <option value="female">{t("female")}</option>
                 </select>
               </div>
 
@@ -393,22 +394,22 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-surface-container p-4 rounded-xl">
-                  <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("weight", lang)} (kg)</span>
+                  <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("weight")} (kg)</span>
                   <input type="number" step="0.1" value={profileForm.weight} onChange={e=>setProfileForm({...profileForm, weight: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
                 </div>
                 <div className="bg-surface-container p-4 rounded-xl">
-                  <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("adultWeight", lang)} (kg)</span>
+                  <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("adultWeight")} (kg)</span>
                   <input type="number" step="0.1" value={profileForm.adultWeight} onChange={e=>setProfileForm({...profileForm, adultWeight: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
                 </div>
               </div>
 
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("birthDate", lang)}</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("birthDate")}</span>
                 <input type="date" value={profileForm.birthDate} onChange={e=>setProfileForm({...profileForm, birthDate: e.target.value})} className="w-full bg-transparent font-bold text-lg text-primary border-b border-primary-container focus:outline-none p-1" />
               </div>
 
               <div className="bg-surface-container p-4 rounded-xl">
-                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("photoUpload", lang)}</span>
+                <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1 block">{t("photoUpload")}</span>
                 <input type="file" accept="image/*" onChange={handleProfilePhotoUpload} className="w-full text-xs mt-1 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-primary-container file:text-on-primary-container hover:file:bg-primary-container/80 cursor-pointer text-on-surface" />
               </div>
 
@@ -418,7 +419,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
                 className="w-full mt-4 bg-primary flex items-center justify-center gap-2 text-on-primary py-4 rounded-full font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform"
               >
                 <span className="material-symbols-outlined">save</span>
-                 {t("updateProfile", lang)}
+                 {t("updateProfile")}
               </button>
 
               {/* Delete */}
@@ -457,27 +458,27 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
            </div>
            
            <div className="bg-surface-container-high p-8 space-y-6 pb-20 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] rounded-t-3xl">
-             <h3 className="font-headline text-xl font-bold text-on-surface">{t('cropPhoto', lang)}</h3>
+             <h3 className="font-headline text-xl font-bold text-on-surface">{t('cropPhoto')}</h3>
              
              {/* Slider Zoom */}
              <div className="flex flex-col gap-2">
-               <label className="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{t('zoom', lang)}</label>
+               <label className="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{t('zoom')}</label>
                <input type="range" value={zoom} min={1} max={3} step={0.1} onChange={(e) => setZoom(e.target.value)} className="w-full accent-primary bg-surface-variant h-2 rounded-full appearance-none outline-none" />
              </div>
              
              {/* Slider Rotation */}
              <div className="flex flex-col gap-2">
-               <label className="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{t('rotate', lang)}</label>
+               <label className="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{t('rotate')}</label>
                <input type="range" value={rotation} min={0} max={360} step={1} onChange={(e) => setRotation(e.target.value)} className="w-full accent-primary bg-surface-variant h-2 rounded-full appearance-none outline-none" />
              </div>
              
              {/* Buttons */}
              <div className="flex gap-4 pt-2">
                <button onClick={() => setTempPhotoUrl(null)} className="flex-1 py-4 font-bold rounded-full bg-surface text-on-surface ring-1 ring-outline hover:bg-surface-variant active:scale-95 transition-all">
-                 {t('cancel', lang)}
+                 {t('cancel')}
                </button>
                <button onClick={handleConfirmCrop} className="flex-1 py-4 font-bold rounded-full bg-primary text-on-primary shadow-lg shadow-primary/20 hover:bg-primary/90 active:scale-95 transition-all">
-                 {t('confirmEdit', lang)}
+                 {t('confirmEdit')}
                </button>
              </div>
            </div>
@@ -486,12 +487,12 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
 
       {/* General Information */}
       <section className="space-y-6">
-        <h3 className="font-headline text-lg font-bold text-on-surface px-2">{t("generalInfo", lang)}</h3>
+        <h3 className="font-headline text-lg font-bold text-on-surface px-2">{t("generalInfo")}</h3>
         <div className="space-y-4">
           <div className="bg-surface-container p-5 rounded-lg flex items-center justify-between">
             <div className="flex items-center gap-4">
               <span className="material-symbols-outlined text-outline">cake</span>
-              <span className="font-body font-medium text-on-surface">{t("age", lang)}</span>
+              <span className="font-body font-medium text-on-surface">{t("age")}</span>
             </div>
             <span className="font-body font-bold text-on-surface-variant">{calculateAgeStr(petInfo.birthDate)}</span>
           </div>
@@ -505,7 +506,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
           <div className="bg-surface-container p-5 rounded-lg flex items-center justify-between">
             <div className="flex items-center gap-4">
               <span className="material-symbols-outlined text-outline">fingerprint</span>
-              <span className="font-body font-medium text-on-surface">{t("microchipId", lang)}</span>
+              <span className="font-body font-medium text-on-surface">{t("microchipId")}</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="font-body font-bold text-on-surface-variant max-w-[120px] truncate">{petInfo.microchip || "--"}</span>
@@ -528,14 +529,14 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
                  </div>
               </div>
               <div>
-                 <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">{t("nfcScanTitle", lang)}</h3>
-                 <p className="text-sm font-medium text-on-surface-variant">{nfcError || t("nfcScanDesc", lang)}</p>
+                 <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">{t("nfcScanTitle")}</h3>
+                 <p className="text-sm font-medium text-on-surface-variant">{nfcError || t("nfcScanDesc")}</p>
               </div>
               <button 
                  onClick={() => setIsScanningNfc(false)}
                  className="w-full py-4 rounded-full font-bold bg-surface-container-high text-on-surface-variant hover:bg-surface-variant active:scale-95 transition-all"
               >
-                 {t("stopScan", lang)}
+                 {t("stopScan")}
               </button>
            </div>
         </div>
@@ -566,7 +567,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
               {!calcResult && (
                 <div className="py-8 flex flex-col items-center justify-center bg-surface-container-low rounded-xl">
                   <div className="w-8 h-8 border-4 border-tertiary-fixed border-t-transparent flex rounded-full animate-spin mb-3"></div>
-                  <p className="font-bold text-sm text-on-surface-variant animate-pulse">{t("processing", lang)}</p>
+                  <p className="font-bold text-sm text-on-surface-variant animate-pulse">{t("processing")}</p>
                 </div>
               )}
 
@@ -574,15 +575,15 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
               {calcResult && !calcResult.error && (
                 <div className="bg-secondary-container text-on-secondary-container p-6 rounded-2xl space-y-5 shadow-inner">
                   <div className="flex flex-col">
-                    <span className="uppercase text-[10px] tracking-widest font-bold opacity-80 mb-1">{t("suggestedPortion", lang)} (Frequency: {calcResult.frequency}x)</span>
+                    <span className="uppercase text-[10px] tracking-widest font-bold opacity-80 mb-1">{t("suggestedPortion")} (Frequency: {calcResult.frequency}x)</span>
                     <p className="font-headline text-4xl font-extrabold">{calcResult.portion}g <span className="text-xl font-medium opacity-80">/pote</span></p>
                   </div>
                   
                   <div className="bg-white/20 p-4 rounded-xl space-y-1 backdrop-blur-md">
                      <p className="font-bold text-sm flex justify-between items-center">
-                        {t("preciseDailyTotal", lang)} <span className="text-lg bg-surface/80 text-on-surface px-2 py-0.5 rounded-md">{calcResult.total}g</span>
+                        {t("preciseDailyTotal")} <span className="text-lg bg-surface/80 text-on-surface px-2 py-0.5 rounded-md">{calcResult.total}g</span>
                      </p>
-                     <p className="text-xs font-medium opacity-80">{t("refInterpolated", lang)}: {calcResult.calcDetails}</p>
+                     <p className="text-xs font-medium opacity-80">{t("refInterpolated")}: {calcResult.calcDetails}</p>
                   </div>
                 </div>
               )}
@@ -677,7 +678,7 @@ export default function Profile({ rootState, appState, updateState, onDeletePet,
                 className="w-full bg-primary disabled:opacity-50 disabled:active:scale-100 flex items-center justify-center gap-2 text-on-primary py-4 rounded-full font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform"
               >
                 <span className="material-symbols-outlined">save</span>
-                 {t("applyPlanning", lang)}
+                 {t("applyPlanning")}
               </button>
             </div>
           </div>

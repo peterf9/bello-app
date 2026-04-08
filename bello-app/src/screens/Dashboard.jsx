@@ -1,6 +1,7 @@
-import { t } from "../utils/translations";
+import { useTranslation } from "react-i18next";
 
-export default function Dashboard({ appState, updateState, lang }) {
+export default function Dashboard({ appState, updateState }) {
+  const { t } = useTranslation();
   const schedule = appState?.schedule || { meals: [] };
   const logs = appState?.logs || {};
   const today = new Date().toISOString().split("T")[0];
@@ -62,11 +63,11 @@ export default function Dashboard({ appState, updateState, lang }) {
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-8 text-on-primary shadow-lg shadow-primary/10">
         <div className="relative z-10">
-          <p className="font-label text-xs uppercase tracking-[0.2em] opacity-80 mb-2">{t("dailyProgress", lang)}</p>
+          <p className="font-label text-xs uppercase tracking-[0.2em] opacity-80 mb-2">{t("dailyProgress")}</p>
           <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-1">
-            {todayLogs.length === schedule.meals?.length ? t("allDone", lang) : `${t("nextMealAt", lang)} ${nextMeal?.time || '--:--'}`}
+            {todayLogs.length === schedule.meals?.length ? t("allDone") : `${t("nextMealAt")} ${nextMeal?.time || '--:--'}`}
           </h2>
-          <p className="text-sm opacity-90">{todayLogs.length === schedule.meals?.length ? t("restWell", lang) : `${schedule.gramsPerMeal || '---'}g ${t("perMeal", lang).toLowerCase()}`}</p>
+          <p className="text-sm opacity-90">{todayLogs.length === schedule.meals?.length ? t("restWell") : `${schedule.gramsPerMeal || '---'}g ${t("perMeal").toLowerCase()}`}</p>
         </div>
         <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute right-6 top-6">
@@ -77,8 +78,8 @@ export default function Dashboard({ appState, updateState, lang }) {
       {/* Meals Grid */}
       <section className="space-y-4">
         <div className="flex items-center justify-between mb-4 px-2">
-          <h3 className="font-headline text-lg font-bold">{t("todaysMeals", lang)}</h3>
-          <span className="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">{schedule.meals?.length || 0} {t("totalMeals", lang)}</span>
+          <h3 className="font-headline text-lg font-bold">{t("todaysMeals")}</h3>
+          <span className="font-label text-[11px] font-semibold uppercase text-on-surface-variant tracking-wider">{schedule.meals?.length || 0} {t("totalMeals")}</span>
         </div>
 
         {schedule.meals?.map((meal) => {
@@ -102,14 +103,14 @@ export default function Dashboard({ appState, updateState, lang }) {
                      {meal.time}
                      {completedAt && <span className="text-secondary ml-2 normal-case font-medium">✓ {completedAt}</span>}
                    </span>
-                   <span className="font-headline text-xl font-bold text-on-surface">{t(meal.name.replace(/\\s+/g, ''), lang) !== meal.name.replace(/\\s+/g, '') ? t(meal.name.replace(/\\s+/g, ''), lang) : t(meal.name, lang)}</span>
+                   <span className="font-headline text-xl font-bold text-on-surface">{t(meal.name.replace(/\s+/g, '')) !== meal.name.replace(/\s+/g, '') ? t(meal.name.replace(/\s+/g, '')) : t(meal.name)}</span>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <div className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider ${
                   isCompleted ? "bg-secondary-container text-on-secondary-container" : "bg-tertiary-container text-on-tertiary-container"
                 }`}>
-                  {isCompleted ? t("completedText", lang) : t("pending", lang)}
+                  {isCompleted ? t("completedText") : t("pending")}
                 </div>
                 {isCompleted ? (
                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
@@ -132,17 +133,18 @@ export default function Dashboard({ appState, updateState, lang }) {
            <span className="material-symbols-outlined text-primary text-3xl">water_drop</span>
            <div>
               <h4 className="font-headline text-2xl font-extrabold text-on-surface">1.2L</h4>
-              <p className="text-xs text-on-surface-variant font-medium">{t("waterIntake", lang)}</p>
+              <p className="text-xs text-on-surface-variant font-medium">{t("waterIntake")}</p>
            </div>
         </div>
         <div className="bg-secondary-container/30 p-6 rounded-lg flex flex-col justify-between aspect-square">
            <span className="material-symbols-outlined text-secondary text-3xl">exercise</span>
            <div>
               <h4 className="font-headline text-2xl font-extrabold text-on-surface">45m</h4>
-              <p className="text-xs text-on-surface-variant font-medium">{t("activityTotal", lang)}</p>
+              <p className="text-xs text-on-surface-variant font-medium">{t("activityTotal")}</p>
            </div>
         </div>
       </div>
     </main>
   );
 }
+

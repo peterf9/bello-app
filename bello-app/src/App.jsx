@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import TopAppBar from "./components/TopAppBar";
 import BottomNav from "./components/BottomNav";
 import Dashboard from "./screens/Dashboard";
@@ -11,15 +12,22 @@ import { fetchAppState, updateAppState, getDefaultPetState } from "./services/pa
 function App() {
   const [rootState, setRootState] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const loadState = async () => {
       const state = await fetchAppState();
       setRootState(state);
+      
+      // Sync i18n language with state
+      if (state?.settings?.language) {
+        i18n.changeLanguage(state.settings.language);
+      }
+      
       setLoading(false);
     };
     loadState();
-  }, []);
+  }, [i18n]);
 
   const handleUpdateActivePetState = (updater) => {
     setRootState((prevRoot) => {
@@ -70,7 +78,6 @@ function App() {
       
       const remainingPetIds = Object.keys(newPets);
       if (remainingPetIds.length === 0) {
-        // Fallback se apagar o último cachorro
         const fallbackId = `pet_${Date.now()}`;
         newPets[fallbackId] = getDefaultPetState("Bello");
         remainingPetIds.push(fallbackId);
@@ -96,7 +103,6 @@ function App() {
     );
   }
 
-  const lang = rootState?.settings?.language || "en";
   const activePetInfo = rootState?.pets[rootState?.activePetId];
 
   return (
@@ -105,16 +111,15 @@ function App() {
         rootState={rootState} 
         updateRootState={handleUpdateRootSettings}
         onCreatePet={handleCreatePet}
-        lang={lang} 
       />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/dashboard" element={<Dashboard appState={activePetInfo} updateState={handleUpdateActivePetState} lang={lang} />} />
-        <Route path="/history" element={<History appState={activePetInfo} lang={lang} />} />
-        <Route path="/profile" element={<Profile rootState={rootState} appState={activePetInfo} updateState={handleUpdateActivePetState} onDeletePet={handleDeletePet} lang={lang} />} />
-        <Route path="/settings" element={<Settings rootState={rootState} updateRootState={handleUpdateRootSettings} appState={activePetInfo} updateState={handleUpdateActivePetState} lang={lang} />} />
+        <Route path="/dashboard" element={<Dashboard appState={activePetInfo} updateState={handleUpdateActivePetState} />} />
+        <Route path="/history" element={<History appState={activePetInfo} />} />
+        <Route path="/profile" element={<Profile rootState={rootState} appState={activePetInfo} updateState={handleUpdateActivePetState} onDeletePet={handleDeletePet} />} />
+        <Route path="/settings" element={<Settings rootState={rootState} updateRootState={handleUpdateRootSettings} appState={activePetInfo} updateState={handleUpdateActivePetState} />} />
       </Routes>
-      <BottomNav lang={lang} />
+      <BottomNav />
     </BrowserRouter>
   );
 }

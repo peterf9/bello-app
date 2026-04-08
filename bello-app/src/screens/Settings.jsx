@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { t } from "../utils/translations";
+import { useTranslation } from "react-i18next";
 
-export default function Settings({ rootState, updateRootState, appState, updateState, lang }) {
+export default function Settings({ rootState, updateRootState, appState, updateState }) {
+  const { t } = useTranslation();
   const schedule = appState?.schedule || { meals: [] };
   const petInfo = appState?.petInfo || {};
   const [localMeals, setLocalMeals] = useState(schedule.meals || []);
@@ -19,7 +20,7 @@ export default function Settings({ rootState, updateRootState, appState, updateS
       for (let i = 0; i < difference; i++) {
         newMeals.push({
           id: `meal_${Date.now()}_${i}`,
-          name: t("extraMeal", lang),
+          name: t("extraMeal"),
           time: "16:00",
           type: "afternoon"
         });
@@ -29,19 +30,6 @@ export default function Settings({ rootState, updateRootState, appState, updateS
       setLocalMeals(localMeals.slice(0, newFreq));
     }
   };
-
-  const handleLanguageChange = (e) => {
-    const newLang = e.target.value;
-    updateRootState(prev => ({
-      ...prev,
-      settings: {
-        ...(prev.settings || {}),
-        language: newLang
-      }
-    }));
-  };
-
-
 
   const handleSave = () => {
     updateState({
@@ -58,31 +46,18 @@ export default function Settings({ rootState, updateRootState, appState, updateS
       {/* Hero Section */}
       <section className="space-y-4">
         <div className="flex justify-between items-center">
-          <p className="font-label text-on-surface-variant uppercase tracking-widest text-[11px] font-bold">{t("nutritionPlan", lang)}</p>
-          <div className="relative">
-            <select 
-              value={lang} 
-              onChange={handleLanguageChange} 
-              className="text-xs font-bold text-primary bg-primary-container/40 hover:bg-primary-container px-3 py-1.5 rounded-full border-0 outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer pr-8"
-            >
-              <option value="en">English</option>
-              <option value="pt">Português (BR)</option>
-              <option value="es">Español</option>
-            </select>
-            <span className="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[14px] text-primary pointer-events-none">expand_more</span>
-          </div>
+          <p className="font-label text-on-surface-variant uppercase tracking-widest text-[11px] font-bold">{t("nutritionPlan")}</p>
         </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-on-surface">{t("mealScheduling", lang)}</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-on-surface">{t("mealScheduling")}</h1>
         <p className="text-sm font-medium text-on-surface-variant leading-relaxed">
-          {t("adjustRoutine", lang, { name: petInfo?.name || "Bello" })}
+          {t("adjustRoutine", { name: petInfo?.name || "Bello" })}
         </p>
       </section>
-
 
       {/* Frequency Toggle Section */}
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-on-surface">{t("dailyFrequency", lang)}</h2>
+          <h2 className="text-lg font-bold text-on-surface">{t("dailyFrequency")}</h2>
           <span className="material-symbols-outlined text-tertiary">restaurant</span>
         </div>
         <div className="p-2 bg-surface-container rounded-2xl flex relative shadow-sm border border-outline-variant/20 hover:border-outline-variant transition-colors">
@@ -93,7 +68,7 @@ export default function Settings({ rootState, updateRootState, appState, updateS
           >
             {[1, 2, 3, 4, 5, 6].map(num => (
               <option key={num} value={num}>
-                {num} {num === 1 ? t("perMeal", lang).replace(' / ', '') : t("mealsPerDay", lang) || "Refeições por dia"}
+                {num} {num === 1 ? t("perMeal").replace(' / ', '') : t("mealsPerDay") || "Refeições por dia"}
               </option>
             ))}
           </select>
@@ -104,7 +79,7 @@ export default function Settings({ rootState, updateRootState, appState, updateS
       {/* Meal Times Form */}
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-on-surface">{t("mealTimes", lang)}</h2>
+          <h2 className="text-lg font-bold text-on-surface">{t("mealTimes")}</h2>
           <span className="text-xs font-bold text-primary px-3 py-1 bg-primary-container/20 rounded-full">Automated</span>
         </div>
         <div className="space-y-4">
@@ -117,7 +92,7 @@ export default function Settings({ rootState, updateRootState, appState, updateS
                 <span className="material-symbols-outlined text-sm">
                   {meal.type === 'morning' ? 'wb_sunny' : meal.type === 'afternoon' ? 'light_mode' : 'dark_mode'}
                 </span>
-                {t(meal.name.replace(/\s+/g, ''), lang) !== meal.name.replace(/\s+/g, '') ? t(meal.name.replace(/\s+/g, ''), lang) : meal.name}
+                {t(meal.name.replace(/\s+/g, '')) !== meal.name.replace(/\s+/g, '') ? t(meal.name.replace(/\s+/g, '')) : meal.name}
               </label>
               <div className="flex items-center justify-between">
                 <input
@@ -141,10 +116,11 @@ export default function Settings({ rootState, updateRootState, appState, updateS
             className="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 active:scale-95 transition-transform duration-200 flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined">check_circle</span>
-            {t("saveChanges", lang)}
+            {t("saveChanges")}
           </button>
         </div>
       </div>
     </main>
   );
 }
+

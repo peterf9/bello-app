@@ -125,7 +125,7 @@ export const translations = {
     nutritionLogs: "Registros Nutricionais",
     pastRecords: "Histórico",
     reviewConsistency: "Revise a consistência alimentar e hábitos passados.",
-    mealsCompleted: "refeições feias",
+    mealsCompleted: "refeições feitas",
 
     // Profile
     generalInfo: "Informações Gerais",
@@ -166,7 +166,7 @@ export const translations = {
     dailyFrequency: "Frequência",
     mealsPerDay: "refeições/dia",
     mealTimes: "Horários",
-    saveChanges: "Salvar ",
+    saveChanges: "Salvar Alterações",
     extraMeal: "Tigela Extra",
     snack: "Lanchinho",
     aiConfigLabel: "Scanner de IA (Gemini)",
@@ -291,12 +291,3 @@ export const translations = {
     newPetName: "Nombre del Nuevo Perro"
   }
 };
-
-export function t(key, lang = 'en', replacers = {}) {
-  const dictionary = translations[lang] || translations['en'];
-  let text = dictionary[key] || key;
-  Object.keys(replacers).forEach(r => {
-    text = text.replace(`{${r}}`, replacers[r]);
-  });
-  return text;
-}
